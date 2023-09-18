@@ -1,0 +1,6 @@
+- What is an advantage to using a text editor? 
+	- A basic text editor can edit any file you throw at it, even if it can't read it. However, a basic text editor cannot render Markdown text or highlight code, so a more develment-focussed text editor is nice to have for anything beyond plain text files.
+
+- Is there an advantage of using a relative vs an absolute URL?
+	- A relative URL will operate regardless of what your website is called. You can change your domain from mycoolwebsite.com to ohmygoshbro.wowthisisawesome.youshouldtotallytryitsomeday.checkthisthing.out, and all your relative links will still work, as long as you don't change the file structure. 
+	- An absolute URL is necessary for linking to resources on a different domain or subdomain, and can be helpful for permalinks. For example, many (if not most) Wikipedia sources also link to the same resource via archive.org to view it as it was when it was cited.
