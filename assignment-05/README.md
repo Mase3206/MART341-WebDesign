@@ -4,7 +4,7 @@ This week (#5), we learned about more HTML tags, including (most exicitingly), t
 
 ![like this one](https://placebear.com/200/300) ![or this one](https://placebear.com/100/301) ![or this one](https://placebear.com/100/307)
 
-random bears courtesy of [placebears.com](https://placebears.com)
+random bears courtesy of [placebear.com](https://placebear.com)
 
 <br />
 
