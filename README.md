@@ -9,3 +9,4 @@ The website for this class can be found at [iwd.noahsroberts.com](http://iwd.noa
 - [Assignment 3](./assignment-03/)
 - [Assignment 4](./assignment-04/)
 - [Assignment 5](./assignment-05/)
+- [Assignment 6](./assignment-06/)
