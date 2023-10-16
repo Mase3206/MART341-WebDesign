@@ -1,0 +1,112 @@
+.grid-container {
+	display: inline-grid;
+	grid-template-columns: auto auto;
+}
+
+.item1 {
+	display: inline-block;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.item2 {
+	display: inline-block;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	text-align: right;
+}
+
+.right {
+	float: right;
+	vertical-align: bottom;
+}
+
+.footer {
+	font-size: 11px;
+}
+
+.footer-item {
+	max-width: 50%;
+	padding: 5px;
+}
+
+img {
+	padding: 5px;
+}
+
+p {
+	font-family: sans-serif;
+}
+
+html {
+	font-family: sans-serif;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	text-decoration: inherit;
+}
+
+table {
+	min-width: 50%;
+	background-color: #ffffff;
+	border-collapse: collapse;
+	border-width: 3px;
+	border-color: #000000;
+	border-style: solid;
+	color: #000000;
+}
+
+table td, table th {
+	border-width: 1.5px;
+	border-color: #000000;
+	border-style: solid;
+	padding: 5px;
+	padding-top: 7px;
+	padding-bottom: 4px;
+}
+
+table thead {
+	background-color: #c0c0c0;
+}
+
+.page-title {
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+pre.nav {
+	margin-top: 0px;
+	font-family: sans-serif;
+}
+
+br.larger {
+	margin-bottom: 8px;
+}
+
+.form {
+	margin-top: 28px;
+}
+
+.form p {
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+.form p.last {
+	margin-bottom: 0px;
+}
+
+fieldset {
+	margin-top: 16px;
+}
+
+fieldset.last {
+	margin-bottom: 16px;
+}

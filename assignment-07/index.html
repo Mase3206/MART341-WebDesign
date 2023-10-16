@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="How bear species differ">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+		
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+		<title>Comparing Bears</title>
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<script src="answer.js"></script> <!-- Link the script that I 100% did not code myself - see comments in answer.js for details. -->
+	</head>
+	
+	<body>
+		<h1 class="page-title">Intro to Web Design - MART 341</h1>
+		<pre class="nav"><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 7 README</a></pre>
+
+		<h2>Assignment 7 &mdash; Comparing Bears</h2>
+		
+		<img src="/assets/images/american-black-bear-small.jpg" alt="A smaller black bear stands on all fours looking forward" title="American Black Bear" height="200" /><img src="/assets/images/canadian-grizzly-bear.jpeg" alt="A large grizzly bear stands on all fours in the snow" title="Canadian Grizzly Bear"  height="200" /><img src="/assets/images/polar-bear-stands-on-rear-legs.jpg" alt="A large polar bear stands on its rear legs in curiousity" title="Polar Bear, &copy; Colby J. Brokvist"  height="200" />
+
+		<p>When I think of bears, I always think of brown, grizzly, and polar bears. Even though they are all bears, they definitely have their differences. Let's compare them!</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Features</th>
+					<th scope="col">Black Bear</th>
+					<th scope="col">Grizzly Bear</th>
+					<th scope="col">Polar Bear</th>
+				</tr>
+			</thead>
+
+			<tr>
+				<th scope="row">Fur color</th>
+				<td>Black</td>
+				<td>Brown, with blonde highlights</td>
+				<td>White, beige</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Ears</th>
+				<td>Pointed</td>
+				<td>Rounded</td>
+				<td>Rounded</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Nose</th>
+				<td>Pointed</td>
+				<td>Pointed</td>
+				<td>Conical</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Face</th>
+				<td>Smaller, rounder</td>
+				<td>Wider, flatter</td>
+				<td>Longer, conical</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Paws</th>
+				<td>Short claws</td>
+				<td>Long claws</td>
+				<td>Paddle-like paw</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Shoulder hump</th>
+				<td>No</td>
+				<td>Yes</td>
+				<td>No</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Diet</th>
+				<td>Berries, plant shoots, and nuts</td>
+				<td>Roots, berries, insects, and fish</td>
+				<td>Meat, primarily seals</td>
+			</tr>
+		</table>
+		<p style="font-size:small;">Bear info sourced from <a href="https://www.greenbelly.co/pages/types-of-bears" title="8 Types of Bears Compared" target="_blank">greenbelly</a>.</p>
+
+		<!-- This is the form bit, but the `<form>` tag without an action doesn't work, so it's in `<div>` tag instead. -->
+		<form action="javascript:void(0);" onsubmit="submitForm();" method="post" id="bears" class="form">
+			<fieldset>
+				<legend>Bear Preferences</legend>
+				<p>
+					Do you like bears? <br />
+					<input type="radio" name="love-for-bears" id="yes-to-bears" value="Yes" /> <label for="yes-to-bears">Yes</label> <br />
+					<input type="radio" name="love-for-bears" id="no-to-bears" value="No" /> <label for="no-to-bears">No</label>
+				</p>
+
+				<p class="last">
+					What are your favorite bear families? <br />
+					<input type="checkbox" name="family" id="black" value="Black"/> <label for="black">Black</label> <br />
+					<input type="checkbox" name="family" id="grizzly" value="Grizzly (brown)" /> <label for="grizzly">Grizzly (brown)</label> <br />
+					<input type="checkbox" name="family" id="polar" value="Polar" /> <label for="polar">Polar</label>
+				</p>
+			</fieldset>
+			
+			<fieldset class="last">
+				<legend>Fat Bear Week Stuff</legend>
+				<p>When was the first year you voted for a bear in <a href="https://explore.org/fat-bear-week" title="External link to explore.org">Fat Bear Week?</a></p>
+				<select name="first-year">
+					<option value="never">Never voted</option>
+					<option value="2023" selected="true">2023</option>
+					<option value="2022">2022</option>
+					<option value="2021">2021</option>
+					<option value="2020">2020</option>
+					<option value="before-2020">Before 2020</option>
+				</select>
+
+				<p class="last">
+					Which fat bear did you vote for? 
+					<input type="text" name="fat-bear-number" id="fat-bear-number-input" maxlength="3" size="3" placeholder="747"/>
+				</p>
+			</fieldset>
+			
+			<p>
+				Do you have any comments about bears you'd like to share? <br />
+				<textarea type="text" name="comment" id="comment-input" cols="80" rows="3" placeholder="Enter comments here..."></textarea>
+			</p>
+
+			<p><input type="submit" value="Submit"></p>
+		</form>
+	</body>
+	
+	<footer>
+		<br /><br />
+		<div class="footer">
+			<div class="item1 footer-item">
+				<p>&copy;<!-- This tells the renderer to place a copyright symbol here. I have to do this so VS Code doesn't yell at me --> 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+			</div>
+
+			<div class="item2 footer-item right">
+				<br /><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img  src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" /></a>
+			</div>
+		</div>
+	</footer>
+</html>
