@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 
 		<!-- Provide a description of your page: -->
-		<meta name="description" content="Assignment 8">
+		<meta name="description" content=""> <!-- TODO -->
 
 		<!-- Provide the author information for the page: -->
 		<meta name="author" content="Noah S. Roberts">
@@ -16,25 +16,52 @@
 		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
 		<title>Assignment 8</title>
-		<link rel="stylesheet" href="../assets/css/style.css">
+		<link rel="stylesheet" href="/css/style.css">
 	</head>
 
 	<body>
+		<header>
+			<table>
+				<tr>
+					<td class="site-title">
+						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
+						<h3 id="page-title">Fat Bear Week 2023</h3>
+					</td>
+	
+					<td class="page-nav">
+						<h3>Intro to Web Design &ndash; MART 341</h3>
+						<div class="br-small"><br /></div>
+						<div class="navbar"> <!-- This is my attempt at a navbar -->
+							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 8 README</a></p> 
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
 		
+		<div class="content">
+			<p>
+				A couple weeks ago, an annual event known as "<a href="https://www.nps.gov/katm/learn/fat-bear-week-2023.htm" title="NPS website for Fat Bear Week 2023" target="_blank">Fat Bear Week</a>" concluded. This is a week-long event held by the National Parks Service. While it hasn't made its way into everyone's conscience (yet), it has made the news:
+			</p>
+
+			<!-- KXLY coverage of Fat Bear Week 2023 finalists and winner -->
+			<iframe width="600" height="337.5" src="https://www.youtube.com/embed/yyRjqH39CSM?si=XFnn0KWRClONS9eb" title="YouTube video player" frameborder="0" allow="picture-in-picture; web-share" allowfullscreen>KXLY coverage of Fat Bear Week 2023 finalists and winner</iframe>
+			
+		</div>
+		
+		<footer>
+			<table>
+				<tr>
+					<td class="left">
+						<p>&copy; 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+					</td>
+					
+					<td class="right" >
+						<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-by-nc-sa-image" /></a>
+					</td>
+				</tr>
+			</table>
+		</footer>
 	</body>
 
-	<footer>
-		<br /><br />
-		<table>
-			<tr>
-				<td class="left">
-					<p>&copy;<!-- This tells the renderer to place a copyright symbol here. I have to do this so VS Code doesn't yell at me --> 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
-				</td>
-				
-				<td class="right" >
-					<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-by-nc-sa-image" /></a>
-				</td>
-			</tr>
-		</table>
-	</footer>
 </html>

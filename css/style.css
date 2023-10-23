@@ -1,22 +1,22 @@
+/* Footer Styling */
+
 footer {
 	font-size: 11px;
+	margin-top: 40px;
 }
 
 footer table {
 	width: 100%;
 	background-color: interit;
 	border-collapse: collapse;
-	border-width: 3px;
 	border-color: transparent;
-	border-style: solid;
 	color: inerit;
+	border-width: 0px;
 }
 
 footer table td, footer table th {
-	border-width: 1.5px;
 	border-color: transparent;
-	border-style: solid;
-	padding: 5px;
+	padding: 0px;
 	padding-top: 3px;
 	padding-bottom: 4px;
 	width: 50%;
@@ -32,13 +32,67 @@ footer td.right {
 	padding-top: 6px;
 }
 
-
-
 footer table thead {
 	background-color: inerit;
 }
 
 
+
+/* Page Header Styling */
+
+header {
+	margin-bottom: 40px;
+}
+
+header * {
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+header table {
+	width: 100%;
+	background-color: interit;
+	border-collapse: collapse;
+	border-color: transparent;
+	color: inerit;
+	border-width: 0px;
+}
+
+header table td{
+	border-color: transparent;
+	padding: 0px;
+	padding-top: 3px;
+	padding-bottom: 4px;
+}
+
+header td.site-title {
+	text-align: left;
+	min-width: 50%;
+	padding-top: 0px;
+}
+
+header td.page-nav {
+	text-align: right;
+	float: right;
+	min-width: 50%;
+}
+
+#website-title {
+	text-decoration: none;
+}
+
+#website-title:hover {
+	text-decoration: none;
+}
+
+img {
+	font-size: 10px;
+}
+
+
+
+
+/* General Styling */
 
 img {
 	padding: 5px;
@@ -83,18 +137,12 @@ table thead {
 	background-color: #c0c0c0;
 }
 
-.page-title {
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-
-pre.nav {
-	margin-top: 0px;
-	font-family: sans-serif;
-}
-
 br.larger {
 	margin-bottom: 8px;
+}
+
+div.br-small {
+	line-height: 60%;
 }
 
 .form {
@@ -115,4 +163,19 @@ fieldset {
 
 fieldset.last {
 	margin-bottom: 16px;
+}
+
+body div.content {
+	margin-left: 40px;
+	margin-right: 40px;
+	min-width: 0px;
+}
+
+body {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+iframe {
+	max-width: 100%;
 }
