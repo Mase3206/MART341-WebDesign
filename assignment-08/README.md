@@ -23,4 +23,4 @@
 
 ## Other things
 - I cleaned up style.css. It was super clunky before.
-- I applied my newfound knowledge of tables and de-janked the footer and made the header pretty.browsers
+- I applied my newfound knowledge of tables and de-janked the footer and made the header pretty.
