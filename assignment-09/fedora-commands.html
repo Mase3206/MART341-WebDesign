@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="Common terminal commands used in Fedora Linux">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+		<title>Noah's Web Design Adventures | Common Fedora commands</title>
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+
+	<body>
+		<header>
+			<table>
+				<tr>
+					<td class="site-title">
+						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
+						<h3 id="page-title">Common Fedora commands</h3>
+					</td>
+	
+					<td class="page-nav">
+						<h3>Intro to Web Design &ndash; MART 341</h3>
+						<div class="br-small"><br /></div>
+						<div class="navbar"> <!-- This is my attempt at a navbar -->
+							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 9 README</a></p> 
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
+		
+		<div class="content">
+			<ul class="space commands">
+				<li>
+					<pre>cd [path]</pre>
+					&Tab;Changes the current directory of the terminal. If called without a file path, it will set the current directory to the user's home folder at /home/(username).
+				</li>
+
+				<li>
+					<pre>ls [options] [path]</pre>
+					&Tab;Lists the contents of a specified directory. If called without a file path, it will list the contents of the current directory.
+
+					<br />
+					&Tab;<b>Common Options:</b>
+					<ul>
+						<li>
+							<pre>a</pre>
+							&Tab;Lists <strong>a</strong>ll files, folders, and symlinks, including those that are hidden.
+						</li>
+
+						<li>
+							<pre>l</pre>
+							&Tab;Lists the permissions, owner user &amp; group, and size in bytes of files. (aka <strong>l</strong>ong)
+						</li>
+
+						<li>
+							<pre>h</pre>
+							&Tab;Converts file sizes into a <strong>h</strong>uman-readable format.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<pre>nano [file]</pre>
+					&Tab;A simple text editor. To open a file, call <span class="mono">nano</span> with a file. If that file does not exist, <span class="mono">nano</span> will make it. To save it, type Ctrl+O. To exit, type Ctrl+X. 
+				</li>
+
+				<li>
+					<pre>dnf [command]</pre>
+					&Tab;The built-in package manager for REHL-based distributions, like Fedora, RedHat, and CentOS (R.I.P.). Requires root-level permissions &mdash; use <span class="mono">sudo</span>.
+
+					<br />
+					&Tab;Note that <span class="mono">dnf</span> is used only in REHL-based distros. Debian-based distros use <span class="mono">apt</span>, while Arch-based distros use <span class="mono">pacman</span> and <span class="mono">yay</span>.
+
+					<br />
+					&Tab;<b>Common Commands:</b>
+					<ul>
+						<li>
+							<pre>update</pre>
+							&Tab;Fetches package lists from the Internet. If any newer packages are available, <span class="mono">dnf</span> will download and install them.
+						</li>
+
+						<li>
+							<pre>install &lt;package(s)&gt;</pre>
+							&Tab;Fetches package lists from the Internet. If <span class="mono">package(s)</span> exist and are not already installed (or can be updated), <span class="mono">dnf</span> will download and install them.
+						</li>
+
+						<li>
+							<pre>remove &lt;package(s)&gt;</pre>
+							&Tab;If <span class="mono">packages(s)</span> exist and are installed on the system, <span class="mono">dnf</span> will remove them and their unused dependencies.
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<pre>ip address</pre>
+					&Tab;Lists the full information for all the network interfaces that exist on the system. <span class="mono">ip</span> (and networking in general) confuses the heck out of me, so the Internet is your friend here.
+				</li>
+			</ul>
+		</div>
+		
+		<footer>
+			<table>
+				<tr>
+					<td class="left">
+						<p>&copy; 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+					</td>
+					
+					<td class="right" >
+						<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-by-nc-sa-image" /></a>
+					</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>

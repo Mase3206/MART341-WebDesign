@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="A basic guide on how to install Fedora Linux">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+		<title>Noah's Web Design Adventures | How to Install Fedora Linux</title>
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+
+	<body>
+		<header>
+			<table>
+				<tr>
+					<td class="site-title">
+						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
+						<h3 id="page-title">How to Install Fedora Linux</h3>
+					</td>
+	
+					<td class="page-nav">
+						<h3>Intro to Web Design &ndash; MART 341</h3>
+						<div class="br-small"><br /></div>
+						<div class="navbar"> <!-- This is my attempt at a navbar -->
+							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 9 README</a></p> 
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
+		
+		<div class="content">
+			<!-- Fedora Logo + attribution -->
+			<img class="has-attribution" src="/assets/images/fedora-logo-700x700.png" alt="The adorable blue logo for Fedora Linux" title="Fedora Linux logo" width="350" height="350" /> 
+			<p class="attribution">Image credit to <a href="http://www.ddesignerr.com/10-operating-system-logos-and-their-meaning/" title="DDesignerr &ndash; 10 Operating System Logos and Their Meaning" target="_blank">ddesignerr.com</a></p>
+
+			<!-- Intro -->
+			<p>
+				This is it. You have decided to take the plunge into the unknown &mdash; Linux. I applaud your bravery. But which distribution (or "distro") should you choose? Ubuntu is often recommended to first-timers, Arch seems way to advanced for you, and you have no idea what a "Gentoo" even is. If I may, I offer an alternative suggestion: <em>Fedora.</em>
+			</p>
+			<div class="p-list">
+				<p style="margin-bottom:5px;">
+					Why Fedora? Well, it is an excelent mix of the end-user simplicity and stability of Ubuntu &amp; the speed and freedom of Arch:
+					<ul style="margin-top:0px;">
+						<li>Fedora uses the same GNOME desktop environment as Ubuntu.</li>
+						<li>Fedora does not come pre-installed with Snap, a <a href="https://en.wikipedia.org/wiki/Snap_(software)#Reception" title="Wikipedia page for Snap (software) linking to the section on its reception" target="_blank">controversial</a> sandboxed package manager developed by Canonical, the parent company of Ubuntu.</li>
+						<ul>
+							<li>If you still want sandboxed packages, I recommend using <a href="https://en.wikipedia.org/wiki/Flatpak" title="Wikipedia page for Flatpak" target="_blank">Flatpak</a> instead.</li>
+						</ul>
+						<li>Fedora uses a newer kernel version by default and more modern packages than Ubuntu, but not so modern as to compromise stability.</li>
+						<li>Fresh Fedora installs are often lighter than fresh Ubuntu installs.</li>
+					</ul>
+				</p>
+			</div>
+			<p>
+				Have I convinced you? Great. No time like the present to install it then!
+			</p>
+
+
+			<h1>Requirements</h1>
+			<ol class="space">
+				<li>
+					A reasonably-modern, 64-bit PC with at least 4 GB of RAM and at least 40 GB of SSD-based storage. Fedora Workstation supports both x86_64 and ARM64 processor architectures. <br class="large-ish" />
+					Side note, the naming conventions for processor architectures can get confusing in Linux. Here's a quick cheat-sheet: (Windows name = Linux/Unix name)
+
+					<ul class="no-space">	<!-- architecture cheat-sheet -->
+						<li>x86 = i386 &emsp;&mdash;&emsp; named after the Intel 386 processor, the first 32-bit processor</li>
+						<li>x86_64 = amd64 &emsp;&mdash;&emsp; there is <a href="https://en.wikipedia.org/wiki/X86-64" title="Wikipedia page for the AMD64 instruction set" target="_blank">far too much history</a> to summarize here</li>
+						<li>ARM32 = armhf / arm32 &emsp;&mdash;&emsp; I know there is a difference, but I have no idea what it is</li>
+						<li>ARM64 = arm64 / aarch64 &emsp;&mdash;&emsp; While <em>technically</em> different, they are practically identical (and yes, this double-naming does cause problems)</li>
+					</ul> 
+				</li>
+
+				<li>A copy of Fedora Linux downloaded from the <a href="https://www.fedoraproject.org/#editions" title="Fedora Project downloads section" target="_blank">Fedora Project website</a>. I recommend going with Fedora Workstation, as it is intended for end-users' computers. Make sure you download the correct version for your computer's architecture.</li> 
+
+				<li>A reasonably-sized USB flash drive &ndash; USB 2.0 and 16 GB is probably fine.</li>
+			</ol>
+
+
+			<h1>Pre-Installation</h1>
+			<p>Now that you have your flash drive prepared, it's time to make use of it.</p>
+			<ol class="space">
+				<li>Download and install <a href="https://etcher.balena.io/" title="Balena Etcher homepage" target="_blank">Etcher</a>. This is a free and easy to use flash drive flashing tool.</li>
+
+				<li>Open Etcher, select your flash drive <em>(make sure it is the correct device!)</em>, select the Fedora Workstation ISO you downloaded earlier, and click Flash!</li>
+
+				<li>Once that is done, you can safely remove the flash drive. Ignore any warnings about incompatible file systems.</li>
+				
+				<li>Plug in the flash drive to any available USB port. Plugging directly into the device or through a powered hub will work, but plugging into an unpowered hub (such as a keyboard) will not.</li>
+				
+				<li>Boot your computer into the boot picker. Tom's Hardware has a <a href="https://www.tomshardware.com/reviews/bios-keys-to-access-your-firmware,5732.html" title="Tom's Hardware &ndash; How to Enter the BIOS on Any PC: Access Keys by Manufacturer" target="_blank">great article</a> on how to do this.</li>
+
+				<li>Select the flash drive. It may be called something like "Generic Mass Storage Device" or, if the drive manufacturer was feeling fancy, it may contain the manufacturer's name.</li>
+
+				<li>If presented with another bootloader, this is likely something called Grub. You shouldn't need to worry about what exactly is going on here, so just press enter.</li>
+			</ol>
+
+
+			<h1>Installation</h1>
+			<p>
+				At this point, you should be presented with a friendly installation wizard. This should walk you through all the steps to get this awesome OS installed, but I must give you some tips:
+
+				<ul>
+					<li>Make sure the computer has power throughout the entire process.</li>
+
+					<li>Leave the flash drive plugged into the computer until it explicitly tells you to remove it. Early removal is likely to result in a borked (aka broken, if only slightly) install.</li>
+
+					<li>If this is your first time, I recommend only installing Linux on non-primary devices, i.e. not one you or anyone else relies on to do their work. It is absolutely possible to dual-boot Linux and Windows or macOS, but it is beyond the scope of this walkthrough.</li>
+
+					<li>When presented with the partitioning tool, be <span class="extreme">EXTREMELY CAREFUL</span> with what you select. While data recovery from accidental partitioning is possible, it can only be done with unencrypted drives, and even it's a huge pain in the <i>[insert expletive of choice]</i>. I have completely and irreversibly destoryed countless installs of macOS, Windows, and Linux because of careless partitioning &mdash; so many so that it became a bit of a curse word in my house.</li>
+				</ul>
+			</p>
+
+
+			<h1>Post-Installation</h1>
+			<p>
+				If the installer successfully finished its tasks and rebooted into Fedora Linux, congradulations! You have officially taken your first steps into the wild world of Linux. 
+			</p>
+
+			<p>
+				Once logged in, you will be presented with a quite lovely default wallpaper. To access your applications, either:
+				<ul class="no-space">
+					<li>swipe up twice on the trackpad with three fingers,</li>
+					<li>press the Super key (should be either the Windows key or &#8984; key), then click the "waffle" on the right side of the dock, or</li>
+					<li>click "Activities" in the top-left corner of the display, then click the "waffle" on the right side of the dock.</li>
+				</ul>
+			</p>
+
+			<p>
+				From here, I recommend just exploring what Fedora has to offer. I made another page with some <a href="./fedora-commands.html" title="Common Fedora Commands">common commands</a> used in Fedora (and Linux, more broadly) to help you get familiar with the terminal. If you're intereseted, I've embedded a video detailing some post-install items you can do below.
+			</p>
+
+			<iframe width="711" height="400" src="https://www.youtube-nocookie.com/embed/RrRpXs2pkzg?si=v2H20ZB8uLhBrGyh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+		</div>
+		
+		<footer>
+			<table>
+				<tr>
+					<td class="left">
+						<p>&copy; 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+					</td>
+					
+					<td class="right" >
+						<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-by-nc-sa-image" /></a> <!-- CC image -->
+					</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>
