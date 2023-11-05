@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="My introduction to cluster computing with Proxmox VE 8.0 and a couple Lenovo ThinkCentre Tiny M900s">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+		<title>Cluster Computing | Noah's Web Design Adventures</title>
+		<link rel="stylesheet" href="/css/new-style.css">
+	</head>
+
+	<body>
+		<header>
+			<table>
+				<tr>
+					<td class="titles">
+						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
+						<h3 id="page-title">Cluster Computing</h3>
+					</td>
+	
+					<td class="page-nav">
+						<h3 id="website-subtitle">Intro to Web Design &ndash; MART 341</h3>
+						<div class="br-small"><br /></div>
+						<div class="navbar"> <!-- This is my attempt at a navbar -->
+							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 10 README</a></p> 
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
+		
+		<div class="content">
+			<p>
+				I have always wanted to experiment with cluster computing. However, I haven't had the time or resources to do such a thing &mdash; until now. It turns out that used Lenovo ThinkCentre M900s are very affordable.
+			</p>
+
+			<a href="https://www.ebay.com/itm/266462051475" title="eBay listing for Lenovo ThinkCentre M900s" target="_blank"><img src="/assets/images/thinkcentre-m900-ebay-listing.jpg" alt="eBay listing for Lenovo ThinkCentre M900s" title="Link: eBay listing for Lenovo ThinkCentre M900s" width="900px" /></a>
+
+			<p>
+				I purchased three of those for around $250, which is actually very affordable. For some reason, most listings for computers like these are "barebones", meaning they don't include a CPU, RAM, or any storage, and the list price is often very similar to fully-populated machines. Even if they are cheaper, the cost of the barebones machines plus the missing components will likely be over $150 per device.
+			</p>
+
+			<p>
+				I will be using <a href="https://en.wikipedia.org/wiki/Proxmox_Virtual_Environment" title="Wiki: Proxmox Virtual Environment" target="_blank">Proxmox Virtual Environment (VE) 8.0</a> as the VM hypervisor and cluster manager. Here's what I will run in it:
+			</p>
+
+			<ul class="no-space">
+				<li>A graphical file server using <a href="https://en.wikipedia.org/wiki/OwnCloud" title="Wiki: OwnCloud" target="_blank">OwnCloud</a>, which is basically self-hosted Google Drive</li>
+				<li>A <a href="https://en.wikipedia.org/wiki/Transmission_(BitTorrent_client)" title="Wiki: Transmission (BitTorrent client)" target="_blank">Transmission</a> BitTorrent client</li>
+				<li>A <a href="https://en.wikipedia.org/wiki/HandBrake" title="Wiki: HandBrake" target="_blank">HandBrake</a> instance</li>
+				<li>A simple <a href="https://en.wikipedia.org/wiki/Nginx" title="Wiki: Nginx" target="_blank">nginx server</a> for reverse proxy</li>
+			</ul>
+
+			<p>
+				These will all run in <a href="https://en.wikipedia.org/wiki/Docker_(software)" title="Wikipedia: Docker (software)" target="_blank">Docker</a> containers (as much as I dislike them) in a <a href="https://fedoraproject.org/cloud/" title="Link: Fedora Cloud 38 page" target="_blank">Fedora Cloud 38 VM</a>. You could run them in any OS you like, but Fedora is just my preference, and they have a version designed specifically for running in a VM.
+			</p>
+
+			<p>
+				I might also add my gaming PC to the cluster. This has some benefits, such as providing a node with a GPU for video encoding and decoding as well as general compute. It would also allow me to actually expose the Docker containers directly to the network. There are ways to add more devices to each Ethernet port in my dorm room, such as via a network switch, but I don't possess the knowledge to do so in a way that would render it undetectable.
+			</p>
+
+			<p>
+				If I do end up adding my gaming PC to the cluster, I would run a couple more Docker containers in the Fedora Cloud VM:
+			</p>
+
+			<ul class="no-space">
+				<li>A <a href="https://en.wikipedia.org/wiki/Plex_Inc.#Plex_Media_Server" title="Wiki: Plex, Inc., Plex Media Server" target="_blank">Plex server</a>. I'm currently running it on my gaming PC in Windows, but I would instead run it in a Docker container under Fedora.</li>
+				<li>A <a href="https://en.wikipedia.org/wiki/Samba_(software)" title="Wiki: Samba (software)" target="_blank">Samba Server</a>. Again, I'm currently running this on my PC. This and OwnCloud are critical to the server, as I need to be able to add and remove files to and from the storage in my PC.</li>
+			</ul>
+
+			<p>
+				My gaming "PC" would become a Windows 10 virtual machine with direct, hardware-level access to the GPU and Bluetooth dongle. I connect to it remotely via Parsec anyways, so I won't be losing anything if I am no longer able to play on a monitor connected directly to the device.
+			</p>
+		</div>
+		
+		<footer>
+			<table>
+				<tr>
+					<td id="footer-left">
+						<p>&copy; 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+					</td>
+					
+					<td id="footer-right">
+						<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-image" /></a>
+					</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>
