@@ -10,7 +10,7 @@
 	--background: #ffffff;			/* var(--background) */
 	--text-color: #000000;			/* var(--text-color) */
 	--link-color: #000000;			/* var(--link-color) */
-	--clicked-link-color: #333333;	/* var(--clicked-link-color) */
+	--clicked-link-color: #494969;	/* var(--clicked-link-color) */
 }
 
 
@@ -38,57 +38,6 @@ body div.content {
 
 body div.content h1 {
 	margin-top: calc(default + 8px);
-}
-
-
-
-
-/* Footer Styling */
-/*  Many of these sizes are absolute, because they are dependent on the size
-	of the image in the right column, which is absolute.					  */
-
-footer {
-	font-size: 11px;
-	margin-top: 40px;
-}
-
-footer * {
-	background-color: var(--background);
-	color: var(--text-color);
-}
-
-footer table {
-	width: 100%;
-	background-color: var(--background);
-	border-collapse: collapse;
-	border-color: transparent;
-	color: var(--text-color);
-	border-width: 0px;
-}
-
-footer table td, footer table th {
-	border-color: transparent;
-	padding: 0px;
-	padding-top: 3px;
-	padding-bottom: 4px;
-	width: 50%;
-}
-
-#footer-left {
-	text-align: left;
-	/* This sets the width of the left column to the width of the window (100%) minus the width of the CC image (66px) */
-	width: calc(100% - 66px);
-}
-
-#footer-right {
-	text-align: right;
-	float: right;
-	padding-top: 6px;
-	width: 66px;
-}
-
-footer table thead {
-	background-color: var(--background);
 }
 
 
@@ -143,6 +92,14 @@ header td.page-nav {
 	min-width: 50%;
 }
 
+header * a {
+	color:var(--text-color);
+}
+
+header * a:visited {
+	color: var(--text-color);
+}
+
 #website-title {
 	text-decoration: none;
 	font-weight: 800;
@@ -154,6 +111,57 @@ header td.page-nav {
 
 #website-subtitle {
 	font-weight: 600;
+}
+
+
+
+
+/* Footer Styling */
+/*  Many of these sizes are absolute, because they are dependent on the size
+	of the image in the right column, which is absolute.					  */
+
+footer {
+	font-size: 11px;
+	margin-top: 40px;
+}
+
+footer * {
+	background-color: var(--background);
+	color: var(--text-color);
+}
+
+footer table {
+	width: 100%;
+	background-color: var(--background);
+	border-collapse: collapse;
+	border-color: transparent;
+	color: var(--text-color);
+	border-width: 0px;
+}
+
+footer table td, footer table th {
+	border-color: transparent;
+	padding: 0px;
+	padding-top: 3px;
+	padding-bottom: 4px;
+	width: 50%;
+}
+
+#footer-left {
+	text-align: left;
+	/* This sets the width of the left column to the width of the window (100%) minus the width of the CC image (66px) */
+	width: calc(100% - 66px);
+}
+
+#footer-right {
+	text-align: right;
+	float: right;
+	padding-top: 6px;
+	width: 66px;
+}
+
+footer table thead {
+	background-color: var(--background);
 }
 
 
