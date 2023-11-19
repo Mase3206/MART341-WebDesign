@@ -1,12 +1,45 @@
-/* Font Imports */
+/* Font import: Atkinson Hyperlegible */
 
-/* Atkinson Hyperlegible */
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+
+
+
+/* Declare some helpful global variables */
 :root {
-	--background: white;		/* var(--background) */
-	--text-color: black;		/* var(--text-color) */
+	--background: #ffffff;			/* var(--background) */
+	--text-color: #000000;			/* var(--text-color) */
+	--link-color: #000000;			/* var(--link-color) */
+	--clicked-link-color: #333333;	/* var(--clicked-link-color) */
 }
+
+
+
+
+/* Root Styling */
+
+html {
+	font-family: 'Atkinson Hyperlegible', 'Arial', 'Helvetica', sans-serif;
+	background-color: var(--background);
+	color: var(--text-color);
+	font-size: 16px
+}
+
+body {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+body div.content {
+	margin-left: 40px;
+	margin-right: 40px;
+	min-width: 0px;
+}
+
+body div.content h1 {
+	margin-top: calc(default + 8px);
+}
+
 
 
 
@@ -57,6 +90,7 @@ footer table td, footer table th {
 footer table thead {
 	background-color: var(--background);
 }
+
 
 
 
@@ -125,6 +159,30 @@ header td.page-nav {
 
 
 
+/* List Styling */
+
+ol li, ul li {
+	padding-bottom: 2px;
+}
+
+ol.space li, ul.space li {
+	padding-bottom: 5px;
+}
+
+ol.no-space li, ul.no-space li {
+	padding-bottom: initial;
+}
+
+div.p-list p {
+	margin-bottom: 5px;
+}
+
+div.p-list ul, div.p-list ol {
+	margin-top: 0px;
+}
+
+
+
 
 /* General Styling */
 
@@ -137,6 +195,8 @@ img {
 img.has-attribution {
 	padding-bottom: 0px;
 }
+
+
 
 p.attribution {	/* use when attributing an image (or something) in a new line */
 	font-size: x-small;
@@ -152,21 +212,19 @@ p.attribution a {
 
 
 
-html {
-	font-family: 'Atkinson Hyperlegible', 'Arial', 'Helvetica', sans-serif;
-	background-color: var(--background);
-	color: var(--text-color);
-	font-size: 16px
-}
-
 a {
 	background-color: var(--background);
-	color: var(--text-color);
+	color: var(--link-color);
 }
 
 a:hover {
 	text-decoration: inherit;
 }
+
+a:visited {
+	color: var(--clicked-link-color);
+}
+
 
 
 table {
@@ -193,6 +251,7 @@ table thead {
 }
 
 
+
 br.larger {
 	margin-bottom: 8px;
 }
@@ -204,6 +263,8 @@ br.large-ish {
 div.br-small {
 	line-height: 60%;
 }
+
+
 
 .form {
 	margin-top: 28px;
@@ -226,26 +287,12 @@ fieldset.last {
 	margin-bottom: 16px;
 }
 
-body div.content {
-	margin-left: 40px;
-	margin-right: 40px;
-	min-width: 0px;
-}
 
-
-body div.content h1 {
-	margin-top: calc(default + 8px);
-}
-
-
-body {
-	margin-left: 16px;
-	margin-right: 16px;
-}
 
 iframe {
 	max-width: 100%;
 }
+
 
 
 span.extreme {
@@ -265,34 +312,12 @@ span.mono {
 	margin-bottom: 0px
 }
 
-.border {
+
+
+.border {		/* Used if I ever need to add a border to something */
 	border-width: 1px;
 	border-color: #ffffff;
 	border-radius: 2px;
 	border-style: solid;
 }
 
-
-
-
-/* List Styling */
-
-ol li, ul li {
-	padding-bottom: 2px;
-}
-
-ol.space li, ul.space li {
-	padding-bottom: 5px;
-}
-
-ol.no-space li, ul.no-space li {
-	padding-bottom: initial;
-}
-
-div.p-list p {
-	margin-bottom: 5px;
-}
-
-div.p-list ul, div.p-list ol {
-	margin-top: 0px;
-}
