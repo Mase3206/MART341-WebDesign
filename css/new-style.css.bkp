@@ -1,97 +1,72 @@
 /* Font Imports */
 
-/* Atkinson Hyperlegible */
+/* Open Sans and Playfair Display */
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-:root {
-	--background: white;		/* var(--background) */
-	--text-color: black;		/* var(--text-color) */
-}
-
 
 
 /* Footer Styling */
-/*  Many of these sizes are absolute, because they are dependent on the size
-	of the image in the right column, which is absolute.					  */
 
 footer {
-	font-size: 11px;
-	margin-top: 40px;
-}
-
-footer * {
-	background-color: var(--background);
-	color: var(--text-color);
+	font-size: .6em;
+	margin-top: 4em;
 }
 
 footer table {
 	width: 100%;
-	background-color: var(--background);
+	background-color: interit;
 	border-collapse: collapse;
 	border-color: transparent;
-	color: var(--text-color);
-	border-width: 0px;
+	color: inerit;
+	border-width: 0em;
 }
 
 footer table td, footer table th {
 	border-color: transparent;
-	padding: 0px;
-	padding-top: 3px;
-	padding-bottom: 4px;
+	padding: 0em;
+	padding-top: 0em;
+	padding-bottom: .3em;
 	width: 50%;
 }
 
 #footer-left {
 	text-align: left;
-	/* This sets the width of the left column to the width of the window (100%) minus the width of the CC image (66px) */
-	width: calc(100% - 66px);
 }
 
 #footer-right {
 	text-align: right;
 	float: right;
 	padding-top: 6px;
-	width: 66px;
 }
 
 footer table thead {
-	background-color: var(--background);
+	background-color: inerit;
 }
 
 
 
 /* Page Header Styling */
-/* these must be absolute, because most defaults are zero */
 
-header {		
+header {
 	padding-top: 10px;
 	margin-bottom: 40px;
+	/*font-family: 'IBM Plex Mono', monospace;*/
 }
 
 header * {
 	margin: 0px;
-	background-color: var(--background);
-	color: var(--text-color);
-}
-
-header a {
-
-	background-color: var(--background);
-	color: var(--text-color);
 }
 
 header table {
 	width: 100%;
-	background-color: var(--background);
+	background-color: interit;
 	border-collapse: collapse;
 	border-color: transparent;
-	color: var(--text-color);
+	color: inerit;
 	border-width: 0px;
 }
 
 header table td{
 	border-color: transparent;
-	background-color: var(--background);
 	padding: 0px;
 	padding-top: 3px;
 	padding-bottom: 4px;
@@ -129,8 +104,11 @@ header td.page-nav {
 /* General Styling */
 
 img {
-	font-size: 10px;
+	font-size: .6em;
 	max-width: 100%;
+}
+
+img {
 	padding: 5px;
 }
 
@@ -138,14 +116,14 @@ img.has-attribution {
 	padding-bottom: 0px;
 }
 
-p.attribution {	/* use when attributing an image (or something) in a new line */
+.attribution {	/* use when attributing an image (or something) in a new line */
 	font-size: x-small;
 	color: grey;
 	margin-top: 2px;
 	padding-bottom: 10px;
 }
 
-p.attribution a {
+.attribution a {
 	color: inherit;
 	font-style: italic;
 }
@@ -153,15 +131,11 @@ p.attribution a {
 
 
 html {
-	font-family: 'Atkinson Hyperlegible', 'Arial', 'Helvetica', sans-serif;
-	background-color: var(--background);
-	color: var(--text-color);
-	font-size: 16px
+	font-family: sans-serif;
 }
 
 a {
-	background-color: var(--background);
-	color: var(--text-color);
+	color: black;
 }
 
 a:hover {
@@ -171,17 +145,17 @@ a:hover {
 
 table {
 	min-width: 50%;
-	background-color: var(--background);
+	background-color: #ffffff;
 	border-collapse: collapse;
 	border-width: 3px;
-	border-color: #ffffff;
+	border-color: #000000;
 	border-style: solid;
-	color: var(--text-color);
+	color: #000000;
 }
 
 table td, table th {
 	border-width: 1.5px;
-	border-color: #ffffff;
+	border-color: #000000;
 	border-style: solid;
 	padding: 5px;
 	padding-top: 7px;
@@ -202,7 +176,7 @@ br.large-ish {
 }
 
 div.br-small {
-	line-height: 60%;
+	line-height: .6em;
 }
 
 .form {
@@ -213,7 +187,6 @@ div.br-small {
 	margin-top: 0px;
 	margin-bottom: 8px;
 }
-
 .form p.last {
 	margin-bottom: 0px;
 }
@@ -234,13 +207,14 @@ body div.content {
 
 
 body div.content h1 {
-	margin-top: calc(default + 8px);
+	margin-top: calc(default + .5em);
 }
 
 
 body {
 	margin-left: 16px;
 	margin-right: 16px;
+	font-family: 'Atkinson Hyperlegible', Arial, Helvetica, sans-serif;
 }
 
 iframe {
@@ -255,19 +229,19 @@ span.extreme {
 }
 
 span.mono {
-	font-family: 'Monaco', monospace;
-	font-size: .9em;
+	font-family: monospace;
+	font-size: 1em;
 }
 
 .commands * pre {
 	font-family: monospace;
-	font-size: .9em;
+	font-size: 1em;
 	margin-bottom: 0px
 }
 
 .border {
 	border-width: 1px;
-	border-color: #ffffff;
+	border-color: #000000;
 	border-radius: 2px;
 	border-style: solid;
 }
