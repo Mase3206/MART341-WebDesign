@@ -366,3 +366,30 @@ span.inline-dfn:hover {
 	border-style: solid;
 }
 
+
+
+div.series-disclaimer * {
+	font-style: italic;
+	margin-top: 0px;
+	margin-bottom: 6px;
+}
+
+div.series-disclaimer * * {
+	margin-bottom: 0px;
+}
+
+div.series-disclaimer :first-child {
+	margin-top: 16px;
+}
+
+div.series-disclaimer * :first-child {
+	margin-top: 0px;
+}
+
+div.series-disclaimer :last-child {
+	margin-bottom: 16px;
+}
+
+div.series-disclaimer * :last-child {
+	margin-bottom: 0px;
+}

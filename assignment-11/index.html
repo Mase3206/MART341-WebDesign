@@ -15,7 +15,7 @@
 		<!-- Favicon -->
 		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
-		<title>Update: Cluster Computing | Noah's Web Design Adventures</title>
+		<title>Cluster Update 1: That didn't work | Noah's Web Design Adventures</title>
 		<link rel="stylesheet" href="/css/new-style.css">
 	</head>
 
@@ -36,7 +36,7 @@
 				<tr>
 					<td class="titles">
 						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
-						<h3 id="page-title"><em>Update:</em> Cluster Computing</h3>
+						<h3 id="page-title">Cluster Update 1: That didn't work.</h3>
 					</td>
 	
 					<td class="page-nav">
@@ -51,10 +51,17 @@
 		</header>
 		
 		<div class="content">
-			<p>
-				<em><strong>Note:</strong> This page references my <a href="/assignment-10/" title="First page on my adventures with cluster computing">previous page</a> on my cluster computing adventure. If you have not read it yet, I highly recommend doing that first so you understand what I'm talking about.</em>
-			</p>
-
+			<div class="series-disclaimer">
+				<p>
+					This page is part of my Cluster Computing Adventure series.
+				</p>
+				<ol>
+					<li><a href="/assignment-10/">Cluster Computing</a></li>
+					<li>Cluster Update 1: That didn't work. &ndash; <b>you are here</b></li>
+					<li><a href="/assignment-12/">Cluster Update 2: New plan!</a></li>
+				</ol>
+			</div>
+			
 			<h2>Progress</h2>
 			<p>
 				Alright. I have the three computers, each filled with raw, untapped, mediocre power from the mid-2010s. I hooked them up to the network switch and to power, got them all installed with Proxmox VE 8.0, joined them into a cluster, and then... it broke. Because they were only connected to an isolated network, they couldn't sync with an <span class="inline-dfn" title="Acronym: Network Time Protocol">NTP</span> server, so each one was very different. I tried to remove each node from the cluster before addressing this, but because of the time issue, the removal process failed.
@@ -138,7 +145,7 @@
 			</p>
 
 			<p>
-				I won't get into the specifics about that quite yet, because I plan on covering that in the next update. I will discuss how I plan on using what I learned to change how the cluster will be configured, the specific advantages of using Fedora Linux: Server Edition and Docker Swarm, and other long-term plans for the cluster.
+				I won't get into the specifics about that quite yet, because I plan on covering that in <a href="/assignment-12/" title="Update 2: Cluster Computing">the next update</a>. I will discuss how I plan on using what I learned to change how the cluster will be configured, the specific advantages of using Fedora Linux: Server Edition and Docker Swarm, and other long-term plans for the cluster.
 			</p>
 		</div>
 		
