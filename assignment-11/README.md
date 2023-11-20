@@ -7,7 +7,7 @@ Sorry for turning this in late. I completely spaced it until now.
 ### Required
 - **Internal CCS: check!** `/style.css` is used in Assignments 7 through 9, and `/new-style.css` is used in Assignments 10 and up.
 - **Hover: check!** All links remove their underline on hover.
-- **External Font:** check! I use "Atkinson Hyperlegible" via a Google Fonts `@import` in new-style.css.
+- **External Font: check!** I use "Atkinson Hyperlegible" via a Google Fonts `@import` in new-style.css.
 
 ### Optional:
 - **Font style: check!**
