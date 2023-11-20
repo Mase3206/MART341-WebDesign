@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en_US">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="An update on my journey into cluster computing">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+
+		<title>Update: Cluster Computing | Noah's Web Design Adventures</title>
+		<link rel="stylesheet" href="/css/new-style.css">
+	</head>
+
+
+	<style>
+		.node-a {
+			color: #990000;
+		}
+		.node-b {
+			color: #009900;
+		}
+	</style>
+
+
+	<body>
+		<header>
+			<table>
+				<tr>
+					<td class="titles">
+						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
+						<h3 id="page-title"><em>Update:</em> Cluster Computing</h3>
+					</td>
+	
+					<td class="page-nav">
+						<h3 id="website-subtitle">Intro to Web Design &ndash; MART 341</h3>
+						<div class="br-small"><br /></div>
+						<div class="navbar"> <!-- This is my attempt at a navbar -->
+							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 11 README</a></p> 
+						</div>
+					</td>
+				</tr>
+			</table>
+		</header>
+		
+		<div class="content">
+			<p>
+				<em><strong>Note:</strong> This page references my <a href="/assignment-10/" title="First page on my adventures with cluster computing">previous page</a> on my cluster computing adventure. If you have not read it yet, I highly recommend doing that first so you understand what I'm talking about.</em>
+			</p>
+
+			<h2>Progress</h2>
+			<p>
+				Alright. I have the three computers, each filled with raw, untapped, mediocre power from the mid-2010s. I hooked them up to the network switch and to power, got them all installed with Proxmox VE 8.0, joined them into a cluster, and then... it broke. Because they were only connected to an isolated network, they couldn't sync with an <span class="inline-dfn" title="Acronym: Network Time Protocol">NTP</span> server, so each one was very different. I tried to remove each node from the cluster before addressing this, but because of the time issue, the removal process failed.
+			</p>
+
+			<p>
+				No matter. Three reinstalls and a manual time-set later, they were in sync at least to the minute. I then restarted them all to clear their caches and whatnot, which inadvertently cleared the time I set. And then it broke again. 
+			</p>
+
+			<p>
+				Three <em>more</em> reinstalls and a manual time-set and hardware clock sync later, each one was once again mostly aligned, even after restarts. It actually worked this time, but it turns out that Proxmox VE does not work how I expected or wanted. Thus, my three little computers sat atop my Xbox for two weeks before I decided to make my next move.
+			</p>
+
+			<h2>Clustering 101</h2>
+			<p>
+				Let's step back a moment to discuss how clusters actually work. First up, requirements:
+				<ul class="space">
+					<li>Each cluster must have at least two nodes (but should have at least three), one of which must be the "controller" node.</li>
+					<li>There must be a completely isolated, internal network just for the nodes to communicate with each other. This reduces the amount of unnecessary noise between the nodes, and is much more secure.</li>
+					<li>Then, at least one of the nodes must be connected to the greater network in one way or another via a completely separate <span class="inline-dfn" title="Acronym: Network Interface Card &mdash; what a network cable like Ethernet is connected to on a computer">NIC</span>.</li>
+					<ul>
+						<li>If only one node is connected to the larger network, it must also serve as the network gateway for the other nodes to allow them to run updaes, sync with time, etc.</li>
+						<li>If all nodes are connected to the larger network, they can all independently access the Internet, but it can be less secure.</li>
+					</ul>
+				</ul>
+			</p>
+
+			<p>
+				A virtual machine (VM)-based cluster will run VMs &mdash; smaller, paired down versions of full-fledged operating systems &mdash; on whatever node you assign them to. They can dynamically assign themselves to other nodes if need be, but the storage for that VM will not move. There is also much more setup involved with "spinning up" additional VMs, something that I am not used to and aren't interested in learning about at this time. This is the scheme used by Proxmox VE, which is fine, but it turned out to not be what I want. 
+			</p>
+
+			<p>
+				A Docker container-based cluster will run containers &mdash; even tinier versions of OS than VMs use, containing only what is absolutely necessary to run one specific application &mdash; on any available node. You connect to the main one, tell it to run this specific container, and let Docker handle resource allocation. This specific kind of cluster is called a Docker swarm. This is more in-line with what I assumed Proxmox VE to be, so I plan on using this instead.
+			</p>
+
+			<p>
+				The advantage of clustering many computers together instead of just using one, much more powerful computer is a concept known as <span class="inline-dfn" title="Definition: computational failure redundancy">high availability</span>. High availability the concept of computational reduncancy, where an outright failure within one node will not take down the entire server and should only cause minor disruptions, as any services running on that node will automatically be moved to another node. It also allows the system admins to do maintenence on a node without temporarily shutting down the service running on the entire cluster.
+			</p>
+
+			<p>
+				While I'm not too concerned about live maintenence, I do find it interesting, which is why I decided to get into it.
+			</p>
+
+			<h2>The root of all my problems...</h2>
+			<p>
+				How can an out-of-sync clock mess up everything? All certificates (like those used on secure websites) have very rigid timestamps for when they were issued, when they become valid, and when they expire. If one node in the cluster is months behind the others and creates a certificate to join said cluster, that certificate might be expired to the other nodes. I ran into this exact issue in my first attempt.
+			</p>
+
+			<p>
+				Then there's the issue of network timestamps. If one node is even a couple seconds ahead the others and attempts to send a network packet to another node, that other node may receive the packet in the future (or what it thinks is the future).
+			</p>
+
+			<p>
+				That explanation was a bit confusing, so allow me to illustrate with an example. <b class="node-a">Node A</b> has its clock set to <span class="node-a">11:30:00 pm</span>, while <b class="node-b">Node B</b> is set to <span class="node-b">11:30:02 pm</span>. <b class="node-b">Node B</b> asks <b class="node-a">Node A</b> for "really-cool-file.txt" and timestamps it at <span class="node-b">11:30:02 pm</span>. <b class="node-a">Node A</b> receives the request at <span class="node-a">11:30:01 pm</span>, but sees that the timestamp says <span class="node-b">11:30:02 pm</span>. That's one second in the future, and <b class="node-a">Node A</b> is probably going to throw it out for being an impossible request.
+			</p>
+
+			<p>
+				Tiny differences in time that are imperceptible to humans can and will break things. The larger the time difference, the larger the issue, but even tiny differences can cause issues. This is why large datacenters often have their own NTP server that everything can point to to stay in sync.
+			</p>
+
+			<h2>The fix for all my problems...?</h2>
+			<p>
+				The solution is to sync each device with a time server. However, for various reasons, I cannot connect each device to the Internet at once &mdash; but I can connect them individually! After deciding which server OS to use and installing it on each node, I plugged a USB Ethernet adaptor into each one individually to sync their time, run updates, and install a couple tools that I will need later.
+			</p>
+
+			<p>
+				However, this is only a temporary solution, as each node can only update and time-sync when I plug it into the adaptor. On top of that, a server is not very useful if nothing can connect to it via the greater network. Thus, I decided to try to configure the primary node as a network bridge that will perform <span class="inline-dfn" title="Acronym: Network Address Translation">NAT</span> (Network Address Translation). This is what routers do to allow hundreds or thousands of local devices with private IP addresses to access the Internet via one public IP address. 
+			</p>
+
+			<p>
+				But I can't get it to work. Networking is quite confusing to me, and, despite my best efforts to figure it out with the help of the Internet and ChatGPT, it still won't work. I think I left off at firewall configuration, but I was working on it so late (past midnight) that I don't remember for sure. I would love to get it fully working, but I have expended the amount of time an energy on it that I can this weekend, so I must come back to it later.
+			</p>
+
+			<h2>It's a project, afterall.</h2>
+			<p>
+				My end goal for this project is to create and experiment with a cluster-based HomeLab. A HomeLab is a home server that runs applications tailored to home use, such as Plex Media Server, a file share, a BitTorrent client, HomeAssistant, or really anything else you feel like running in a VM or container that day. I have had two previous HomeLabs over the past couple years, all running on ten-year-old computers, but I want to run it on something different.
+			</p>
+
+			<p>
+				See, that's the fun of HomeLabs. Sure, being able to run your own Google Drive-esque service or access your DVD collection from any device is awesome, but, like LEGOs, the fun is in the creation. It can help you gain knowledge about enterprise environments that can be put to your career. I chose Fedora Linux for my cluster nodes, because (1) I like it, (2) it has this killer web interface, and (3) almost all large organizations run RedHat Linux on their servers, and Fedora is the <span class="inline-dfn" title="has a slightly newer kernel and packages; serves as a sort of testing-ground for downstream versions">upstream version</span> of RedHat.
+			</p>
+
+			<p>
+				I won't get into the specifics about that quite yet, because I plan on covering that in the next update. I will discuss how I plan on using what I learned to change how the cluster will be configured, the specific advantages of using Fedora Linux: Server Edition and Docker Swarm, and other long-term plans for the cluster.
+			</p>
+		</div>
+		
+		<footer>
+			<table>
+				<tr>
+					<td id="footer-left">
+						<p>&copy; 2023 Noah S. Roberts, licensed under CC BY-NC-SA 4.0</p>
+					</td>
+					
+					<td id="footer-right" >
+						<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" width="60" id="cc-image" /></a>
+					</td>
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>
