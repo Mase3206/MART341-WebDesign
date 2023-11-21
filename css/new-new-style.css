@@ -151,7 +151,7 @@ div#large-header div.items div.dropdown-content {
 	border: 1px solid #000000;
 	border-top-width: 2px;
 	padding: 8px 10px 8px 10px;
-	margin-top: 6px;
+	margin-top: 6.5px;
 }
 
 div#large-header div.items div.dropdown:hover div.dropdown-content {
@@ -181,6 +181,10 @@ div#large-header hr {
 	border: 1px solid #000000;
 	margin-top: 6px;
 	width: 100%;
+}
+
+#large-header a:visited {
+	color: var(--link-color)
 }
 
 
@@ -273,6 +277,9 @@ div#small-header .site-title, div#small-header #menu-icon {
 	text-decoration: none;
 }
 
+#small-header a:visited {
+	color: var(--link-color)
+}
 
 
 
