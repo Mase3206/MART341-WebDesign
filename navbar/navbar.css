@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+#navbar {
+	text-align: left;
+	max-height: 70px;
+}
+
+#navbar a {
+	text-decoration: underline;
+	color: black;
+}
+
+#navbar a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+#navbar a:visited {
+	color: black;
+}
+
+#navbar {
+	font-family: 'Atkinson Hyperlegible', 'Arial', 'Helvetica', sans-serif;
+	min-width: 100%;
+	border-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: hidden;
+	overflow-x: show;
+}
+
+#navbar hr {
+	border-width: .5px .5px .5px .5px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-right: 0px;
+	margin-left: 0px;
+	display: block;
+}
+
+#navbar hr#divider {
+	margin-top: 6px;
+	margin-bottom: 32.5px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#navbar .titles * {
+	display: inline;
+	margin: 0px !important;
+}
+
+#navbar .menu-collapse {
+	display: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+	background-color: var(--background);
+	border-color: black;
+	border-width: 1px;
+}
+
+#navbar .menu-collapse * {
+	display: inline-block !important;
+	padding-left: 0px;
+}
+
+#navbar .menu-title {
+	margin-bottom: 0px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+#navbar .menus {
+	margin-top: 0px;
+}
+
+#navbar .titles button {
+	font-size: 16px;
+	background-color: white;
+	border-color: white;
+	border-radius: 3px;
+}

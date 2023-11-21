@@ -6,6 +6,8 @@
 
 
 
+
+
 /* Declare some helpful global variables */
 :root {
 	--background: rgb(255,255,255,255);			/* var(--background) */
@@ -31,38 +33,59 @@ body {
 	margin-right: 16px;
 }
 
-body div.content {
+body div#content {
+	position: relative;
+	top: 3em;
 	margin-left: 40px;
 	margin-right: 40px;
 	min-width: 0px;
+	overflow: auto;
 }
 
-body div.content h1 {
+@media only screen and (min-width: 400px) {
+	body div#content {
+		animation-name: add-divcontent-margin;
+		animation-duration: 300ms;
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	body div#content {
+		animation-name: remove-divcontent-margin;
+		animation-duration: 300ms;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+body div#content h1 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
 
-body div.content h2 {
+body div#content h2 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
 
-body div.content h3 {
+body div#content h3 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
 
-body div.content h4 {
+body div#content h4 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
 
-body div.content h5 {
+body div#content h5 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
 
-body div.content h6 {
+body div#content h6 {
 	margin-top: 1.3em;
 	margin-bottom: .7em;
 }
@@ -72,86 +95,203 @@ body div.content h6 {
 
 /* Page Header Styling */
 /* these must be absolute, because most defaults are zero */
-
-header {		
-	padding-top: 10px;
-}
-
-header * {
-	margin: 0px;
+div#large-header {
+	display: block;
+	position: fixed;
+	top: 0px;
+	height: 1.5em;
+	z-index: 1;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	width: calc(100% - (16px * 2));
 	background-color: var(--background);
-	color: var(--text-color);
+	opacity: 100%;
 }
 
-header a {
-
-	background-color: var(--background);
-	color: var(--text-color);
+div#large-header * {
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
-header table {
-	width: 100%;
-	background-color: var(--background);
-	border-collapse: collapse;
-	border-color: transparent;
-	color: var(--text-color);
-	border-width: 0px;
+div#large-header p.site-title, div#large-header div.items, div#large-header div.items .header-item {
+	display: inline-block;
 }
 
-header table td{
-	border-color: transparent;
-	background-color: var(--background);
-	padding: 0px;
-	padding-top: 0px;
-	padding-bottom: auto;
+div#large-header p.site-title {
+	font-weight: bold;
 }
 
-header td.site-title {
-	text-align: left;
-	min-width: 60%;
-	padding-top: 0px;
-}
-
-header td.page-nav {
-	text-align: right;
+div#large-header div.items {
 	float: right;
-	min-width: 50%;
 }
 
-header * a {
-	color:var(--text-color);
+div#large-header div.items .header-item {
+	padding-left: 1em;
 }
 
-header * a:visited {
-	color: var(--text-color);
+div#large-header div.dropdown {
+	height: 27px;
+	z-index: 0px;
 }
 
-#website-title {
-	text-decoration: none;
-	font-weight: 800;
-}
-
-#website-title:hover {
+div#large-header .dropdown-title {
+	font-weight: bold;
 	text-decoration: none;
 }
 
-#website-subtitle {
-	font-weight: 600;
+div#large-header div.items div.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1000 !important;
+	background-color: var(--background);
+	opacity: 100%;
+	padding: 1em;
+	width: fit-content;
+	float: left;
+	border: 1px solid #000000;
+	border-top-width: 2px;
+	padding: 8px 10px 8px 10px;
+	margin-top: 6px;
+}
+
+div#large-header div.items div.dropdown:hover div.dropdown-content {
+	display: block;
+	overflow: hidden;
+}
+
+div#large-header div.items div.dropdown:hover div.dropdown-title {
+	text-decoration: underline;
+}
+
+div#large-header div.items div.dropdown div.dropdown-content:hover {
+	display: block;
+	overflow: hidden;
+}
+
+div#large-header a {
+	text-decoration: none;
+}
+
+div#large-header a:hover {
+	text-decoration: underline;
+}
+
+div#large-header hr {
+	z-index: 1;
+	border: 1px solid #000000;
+	margin-top: 6px;
+	width: 100%;
 }
 
 
+/* Small header */
 
+div#small-header {
+	display: none;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	height: 1.5em;
+	z-index: 3;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	width: calc(100% - (16px * 2));
+	background-color: var(--background);
+	opacity: 100%;
+	overflow: hidden;
+}
 
-/* Navigation */
+div#small-header * {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
-#navbar {
-	border-width: 0px;
-	margin: 0px;
-	margin-top: 16px;
+div#small-header .site-title {
+	font-weight: bold;
 	padding: 0px;
-	overflow-x: hidden;
-	overflow-y: scroll;
 }
+
+div#small-header hr {
+	border: 1px solid #000000;
+	margin-top: 6px;
+}
+
+div#small-header .site-title, div#small-header #menu-icon {
+	display: inline-block;
+}
+
+#menu-icon {
+	float: right;
+	width: 16px;
+	height: 16px;
+	padding: 2.5px 0px 2.5px 0px;
+}
+
+#nav-menu {
+	display: none;
+	position: relative;
+	top: 3em;
+	background-color: var(--background);
+	opacity: 100%;
+	z-index: 5;
+	overflow: auto;
+}
+
+#nav-menu {
+	margin-top: 6px;
+	z-index: 2;
+}
+
+#nav-menu * {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#nav-menu .header-item {
+	margin-bottom: 16px;
+}
+
+#nav-menu .dropdown-title {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#nav-menu .dropdown-title:hover {
+	text-decoration: none;
+}
+
+#nav-menu .dropdown-content {
+	margin-left: 16px;
+	display: none;
+}
+
+#nav-menu a {
+	text-decoration: underline;
+}
+
+#nav-menu a:hover {
+	text-decoration: none;
+}
+
+
+
+
+@media only screen and ((max-width: 600px) or (max-height: 400px)) {
+	div#large-header {
+		animation-name: hide-navbar;
+		animation-duration: 1000ms;
+		display: none;
+	}
+
+	div#small-header {
+		animation-name: show-navbar;
+		animation-duration: 1s;
+		display: block;
+	}
+}
+
+
+
 
 
 
@@ -204,6 +344,9 @@ footer table thead {
 	background-color: var(--background);
 }
 
+#footer {
+	display: block;
+}
 
 
 

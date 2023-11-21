@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html id="html">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Provide a description of your page: -->
+		<meta name="description" content="Navigation bar for this website">
+
+		<!-- Provide the author information for the page: -->
+		<meta name="author" content="Noah S. Roberts">
+
+		<!-- Other meta elements -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="./navbar.css">
+	</head>
+	
+	
+	<body>
+		<div id="navbar">
+			<div class="titles">
+				<button class="menu-title" id="assignments-title" onclick="toggleClusterComputingMenu(true); toggleAssignmentsMenu(false)">Assignments</button>
+
+				<p>|</p>
+
+				<button class="menu-title" id="cluster-computing-title" onclick="toggleAssignmentsMenu(true); toggleClusterComputingMenu(false)">Cluster Computing</button>
+			</div>
+			
+			<hr id="divider" />
+
+			<div class="menus">
+				<ul class="menu-collapse" id="assignments-collapse">
+					<li><a href="/assignment-01/" target="_parent">A-1</a> |</li>
+					<li><a href="/assignment-02/" target="_parent">A-2</a> |</li>
+					<li><a href="/assignment-03/" target="_parent">A-3</a> |</li>
+					<li><a href="/assignment-04/" target="_parent">A-4</a> |</li>
+					<li><a href="/assignment-05/" target="_parent">A-5</a> |</li>
+					<li><a href="/assignment-06/" target="_parent">A-6</a> |</li>
+					<li><a href="/assignment-07/" target="_parent">A-7</a> |</li>
+					<li><a href="/assignment-08/" target="_parent">A-8</a> |</li>
+					<li><a href="/assignment-09/" target="_parent">A-9</a> |</li>
+					<li><a href="/assignment-10/" target="_parent">A-10</a> |</li>
+					<li><a href="/assignment-11/" target="_parent">A-11</a> |</li>
+					<li><a href="/assignment-12/" target="_parent">A-12</a></li>
+				</ul>
+
+				<ol class="menu-collapse" id="cluster-computing-collapse">
+					<li><a href="/assignment-10/" target="_parent">Cluster Computing</a> |</li>
+					<li><a href="/assignment-11/" target="_parent">Update 1: That didn't work.</a> |</li>
+					<li><a href="/assignment-12/" target="_parent">Update 2: New plan!</a></li>
+				</ol>
+			</div>
+
+			<hr />
+		</div>
+	</body>
+
+	<script src="menu-control.js"></script>
+</html>

@@ -16,46 +16,127 @@
 		<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 
 		<title>Cluster Update 2: New plan! | Noah's Web Design Adventures</title>
-		<link rel="stylesheet" href="/css/new-style.css">
+		<link rel="stylesheet" href="/css/new-new-style.css">
 	</head>
 
 	<body>
 		<header>
-			<table>
-				<tr>
-					<td class="titles">
-						<h1><a href="/" id="website-title">Noah's Web Design Adventures</a></h1>
-						<h3 id="page-title">Cluster Update 2: New plan!</h3>
-					</td>
+			<div id="large-header">
+				<p class="site-title">Web Design Adventures</p>
 	
-					<td class="page-nav">
-						<h3 id="website-subtitle">Intro to Web Design &ndash; MART 341</h3>
-						<div class="br-small"><br /></div>
-						<div class="navbar"> <!-- This is my attempt at a navbar -->
-							<p><a href="/">Root Index</a> &emsp; <a href="./README.md">Assignment 12 README</a></p> 
+				<div class="items">
+					<p class="header-item">README</p>
+	
+					<div class="header-item dropdown">
+						<p class="dropdown-title">Assignments</p>
+	
+						<div class="dropdown-content">
+							<p><a href="/assignment-01/" target="_parent">Week 1</a></p>
+							<p><a href="/assignment-02/" target="_parent">Week 2</a></p>
+							<p><a href="/assignment-03/" target="_parent">Week 3</a></p>
+							<p><a href="/assignment-04/" target="_parent">Week 4</a></p>
+							<p><a href="/assignment-05/" target="_parent">Week 5</a></p>
+							<p><a href="/assignment-06/" target="_parent">Week 6</a></p>
+							<p><a href="/assignment-07/" target="_parent">Week 7</a></p>
+							<p><a href="/assignment-08/" target="_parent">Week 8</a></p>
+							<p><a href="/assignment-09/" target="_parent">Week 9</a></p>
+							<p><a href="/assignment-10/" target="_parent">Week 10</a></p>
+							<p><a href="/assignment-11/" target="_parent">Week 11</a></p>
+							<p><a href="/assignment-12/" target="_parent">Week 12</a></p>
+							<p><a href="/assignment-13/" target="_parent">Week 13</a></p>
+							<p><a href="/assignment-14/" target="_parent">Week 14</a></p>
 						</div>
-					</td>
-				</tr>
-			</table>
+					</div>
+	
+					<div class="header-item dropdown">
+						<p class="dropdown-title">Cluster Computing</p>
+	
+						<div class="dropdown-content">
+							<p><a href="/assignment-10/" target="_parent">The Plan</a></p>
+							<p><a href="/assignment-11/" target="_parent">Update 1</a></p>
+							<p><a href="/assignment-12/" target="_parent">Update 2</a></p>
+						</div>
+					</div>
+				</div>
+	
+				<hr />
+			</div>
+
+
+			<div id="small-header">
+				<p class="site-title">Web Design Adventures</p>
+	
+				<img id="menu-icon" src="/assets/bars-16.png" alt="Menu button" onclick="toggleNavMenu()" /> 
+
+				<hr />
+			</div>
+
+			<div class="items" id="nav-menu">
+				<div class="header-item title">
+					<p><a href="./README.md">README</a></p>
+				</div>
+
+				<div class="header-item dropdown" onclick="toggleSection('assignments')">
+					<p><a class="dropdown-title" href="#">Assignments</a></p>
+
+					<div class="dropdown-content" id="assignments">
+						<p><a href="/assignment-01/" target="_parent">Week 1</a></p>
+						<p><a href="/assignment-02/" target="_parent">Week 2</a></p>
+						<p><a href="/assignment-03/" target="_parent">Week 3</a></p>
+						<p><a href="/assignment-04/" target="_parent">Week 4</a></p>
+						<p><a href="/assignment-05/" target="_parent">Week 5</a></p>
+						<p><a href="/assignment-06/" target="_parent">Week 6</a></p>
+						<p><a href="/assignment-07/" target="_parent">Week 7</a></p>
+						<p><a href="/assignment-08/" target="_parent">Week 8</a></p>
+						<p><a href="/assignment-09/" target="_parent">Week 9</a></p>
+						<p><a href="/assignment-10/" target="_parent">Week 10</a></p>
+						<p><a href="/assignment-11/" target="_parent">Week 11</a></p>
+						<p><a href="/assignment-12/" target="_parent">Week 12</a></p>
+						<p><a href="/assignment-13/" target="_parent">Week 13</a></p>
+						<p><a href="/assignment-14/" target="_parent">Week 14</a></p>
+					</div>
+				</div>
+
+				<div class="header-item dropdown" onclick="toggleSection('cluster-computing')">
+					<p><a class="dropdown-title" href="#">Cluster Computing</a></p>
+
+					<div class="dropdown-content" id="cluster-computing">
+						<p><a href="/assignment-10/" target="_parent">The Plan</a></p>
+						<p><a href="/assignment-11/" target="_parent">Update 1</a></p>
+						<p><a href="/assignment-12/" target="_parent">Update 2</a></p>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Playing around with a new navbar -->
+			<!-- <iframe id="navbar" src="/navbar/navbar.html" width="100%" height="80" >  </iframe> -->
 		</header>
 		
-		<div class="content">
+
+		<div id="content">
 			<!-- Because Assignments 10 through 12 are all about the same topic, I decided to add this bit to reflect that and provide easy access to all the updates. -->
 			<div class="series-disclaimer">
 				<p>
 					This page is part of my Cluster Computing Adventure series.
 				</p>
 				<ol>
-					<li><a href="/assignment-10/">Cluster Computing</a></li>
+					<li><a href="/assignment-10/">Cluster Computing</a> asdfasdfasdf ads fas df asd fa sdf as df asdf as df asf a dsf as df asf as f as fa sdf as df asdf as f asdf as df as fas </li>
 					<li><a href="/assignment-11/">Cluster Update 1: That didn't work.</a></li>
 					<li>Cluster Update 2: New plan! &ndash; <b>you are here</b></li>
 				</ol>
 			</div>
 
 			<h2>What I've learned so far</h2>
+			<p>
+				I previously used a turn-key <span class="inline-dfn" title="Acronym: Network Attached Storage; a drive or folder that is accessed over the network">NAS</span> OS called <a href="https://www.openmediavault.org/" title="Link: OpenMediaVault homepage" rel="noopener noreferrer">OpenMediaVault</a>
+			</p>
 		</div>
 		
-		<footer>
+		<script src="/navbar/menu-control.js"></script>
+		<script src="/scripts/nav-menu-control.js"></script>
+
+		<footer id="footer">
 			<table>
 				<tr>
 					<td id="footer-left">

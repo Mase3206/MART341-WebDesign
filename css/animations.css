@@ -1,0 +1,19 @@
+@keyframes inline-dfn-hover {
+	from {
+		background-color: inherit;
+	}
+
+	to {
+		background-color: #dddddd;
+	}
+}
+
+@keyframes inline-dfn-nohover {
+	from {
+		background-color: #dddddd;
+	}
+
+	to {
+		background-color: inherit;
+	}
+}
