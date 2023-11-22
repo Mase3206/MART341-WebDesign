@@ -90,6 +90,14 @@ body div#content h6 {
 	margin-bottom: .7em;
 }
 
+a.no-hover:hover {
+	text-decoration: none !important;
+}
+
+a.no-visited:visited {
+	color: var(--text-color);
+}
+
 
 
 
@@ -184,7 +192,7 @@ div#large-header hr {
 }
 
 #large-header a:visited {
-	color: var(--link-color)
+	color: var(--text-color)
 }
 
 
@@ -213,6 +221,10 @@ div#small-header * {
 div#small-header .site-title {
 	font-weight: bold;
 	padding: 0px;
+}
+
+#small-header .site-title * {
+	text-decoration: none !important;
 }
 
 div#small-header hr {
@@ -277,8 +289,8 @@ div#small-header .site-title, div#small-header #menu-icon {
 	text-decoration: none;
 }
 
-#small-header a:visited {
-	color: var(--link-color)
+#nav-menu *:visited {
+	color: var(--text-color)
 }
 
 
