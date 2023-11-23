@@ -23,7 +23,7 @@
 		<header>
 			<!-- This is the header for larger displays (at least 600px wide and 400px tall), like computers. -->
 			<div id="large-header">
-				<p class="site-title"><a href="/" class="no-hover no-visited">Web Design Adventures</a></p>
+				<p class="site-title"><a href="/" class="no-hover no-visited">Noah's Web Design Adventures</a></p>
 	
 				<div class="items">
 					<p class="header-item"><a href="./README.md">README</a></p>
@@ -65,7 +65,7 @@
 
 			<!-- This is the header for smaller displays, like phones. -->
 			<div id="small-header">
-				<p class="site-title"><a href="/" class="no-hover no-visited">Web Design Adventures</a></p>
+				<p class="site-title"><a href="/" class="no-hover no-visited">Noah's Web Design Adventures</a></p>
 	
 				<!-- This is the little button you click to show the menu. It interfaces with a script I wrote (with the little JavaScript I know) to show #nav-menu and hide div#content and the footer. -->
 				<img id="menu-icon" src="/assets/bars-16.png" alt="Menu button" onclick="toggleNavMenu()" /> 
@@ -117,7 +117,6 @@
 		<div id="content">
 			<!-- Because Assignments 10 through 12 are all about the same topic, I decided to add this bit to reflect that and provide easy access to all the updates. -->
 			<h1>Cluster Update 2: New Plan!</h1>
-
 			<div class="series-disclaimer">
 				<p>
 					This page is part of my Cluster Computing Adventure series.
@@ -130,7 +129,7 @@
 			</div>
 
 			<h2>Out with the old...</h2>
-			<p>In with the... different?</p>
+			<p>In with the... different. Yeah.</p>
 			<p>
 				I have decided that Proxmox is not what I want. So what now? I wanted to try an OS that is not specifically designed for clustering. I need an OS that can do it though. It needs to have great support for older and newer hardware, but it can't be a resource hog. It also needs to be stable. Fedora Server is a good fit. 
 			</p>
@@ -157,7 +156,32 @@
 
 			<h2>What have I done since last week?</h2>
 			<p>
-				
+				As soon as Fedora finished installing on each node, I plugged in a USB Ethernet adaptor to allow it to grab updates, install <a href="https://en.wikipedia.org/wiki/Docker_(software)" title="Wikipedia: Docker (software)" target="_blank">Docker</a> stuff and the nano text editor, and sync with whatever NTP server it wanted to.
+			</p>
+
+			<p>
+				I gave each one a name as well. The primary node is "tiny1", and the two secondary nodes are "tiny2" and "tiny3". Each node also has an <span class="inline-dfn" title="Acronym: Fully Qualified Domain Name; domain with all applicable subdomains, i.e. two.one.example.com. or www.example.com.">FQDN</span>.
+			</p>
+
+			<p>
+				I have yet to join them together in a cluster, though. I want to make sure each node can get updates and keep their clocks in sync. So, I tried to set the primary node up as a network gateway to forward all Internet traffic from the other nodes to said Internet. Even after addressing the firewall issues that I mentioned last week, it still does not work. That takes leads us to the new plan...
+			</p>
+
+			<h2>The new plan!</h2>
+			<p>
+				I think my best bet for the networking issue is to use a <a href="https://openwrt.org/" title="Link: OpenWRT homepage" target="_blank">OpenWRT</a>-based router. I have been eyeing the <a href="https://www.raspberrypi.com/products/compute-module-4/" title="Link: Raspberry Pi Compute Module 4 purchase page" target="_blank">Raspberry Pi Compute Module 4</a>, specifically the variant with no internal storage and 2 GB of RAM, paired with the <a href="https://www.dfrobot.com/product-2242.html" title="Link: DFRobot CM4 Router Carrier Board" target="_blank">DFRobot <span class="inline-dfn" title="Acronym: Compute Module 4">CM4</span> Router Carrier Board</a>. This pairing is perfect for what I need. I just need a basic, gigabit Ethernet router with no WiFi capabilities to offload the gateway duty to a purpose-built, standalone device.
+			</p>
+
+			<p>
+				Once I have that sorted out, I set them up in a three-node Docker Swarm. There are some significant advantages to this approach. For one, I am able tap into the insane amount of purpose-built Docker containers for all sorts of things. On top of that, Docker containers require much less computational overhead than VMs do. The best part is the Swarm system, though. Once the nodes are joined, you just have to connect to the main node and run the Docker container. You don't have to tell it what node to run on or where to store the container. All the storage for the containers I will run will be in a Samba share running off my gaming PC, so they'll all have access to it.
+			</p>
+
+			<p>
+				My ultimate plan for this cluster is to use it as my home server. It will eventually go from a pet project in process to a pet project <em>in use</em>. I will run Plex, HandBrake, Transmission, WireGuard, OwnCloud, and Samba on it, all tied together by Nginx for reverse proxy. I will eventually get an off-the-shelf NAS to fulfill that storage roll, but that NAS will <strong>only</strong> be serving Samba shares. I also have the idea to make a mini server rack with all the components neatly stacked in one rather adorable package.
+			</p>
+
+			<p>
+				Beyond that though, I don't know what will become of it. My life is changing so much, and a lot of this depends on where I live next year (and if I can manage my own Internet), so who knows what will actually happen.
 			</p>
 		</div>
 

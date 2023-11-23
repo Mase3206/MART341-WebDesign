@@ -42,7 +42,7 @@ body div#content {
 	overflow: auto;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 630px) {
 	body div#content {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -284,7 +284,7 @@ div#small-header .site-title, div#small-header #menu-icon {
 
 
 
-@media only screen and ((max-width: 600px) or (max-height: 400px)) {
+@media only screen and ((max-width: 630px) or (max-height: 400px)) {
 	div#large-header {
 		animation-name: hide-navbar;
 		animation-duration: 1000ms;
@@ -564,8 +564,8 @@ span.inline-dfn {
 	animation-name: inline-dfn-nohover;
 	animation-duration: 100ms;
 	background-color: transparent;
-	text-decoration: underline;
-	text-decoration-style: dotted;
+	text-decoration: underline !important;
+	text-decoration-style: dotted !important;
 }
 
 span.inline-dfn:hover {
@@ -573,6 +573,11 @@ span.inline-dfn:hover {
 	animation-duration: 100ms;
 	background-color: #dddddd;
 	border-radius: 2px;
+}
+
+a:has(span.inline-dfn:hover) {
+	text-decoration: underline;
+	text-decoration-style: dashed;
 }
 
 
