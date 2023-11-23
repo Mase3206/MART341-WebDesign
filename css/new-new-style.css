@@ -42,26 +42,15 @@ body div#content {
 	overflow: auto;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (max-width: 600px) {
 	body div#content {
-		animation-name: add-divcontent-margin;
-		animation-duration: 300ms;
-		margin-left: 40px;
-		margin-right: 40px;
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	body div#content {
-		animation-name: remove-divcontent-margin;
-		animation-duration: 300ms;
 		margin-left: 0px;
 		margin-right: 0px;
 	}
 }
 
 body div#content h1 {
-	margin-top: 1.3em;
+	margin-top: 1em;
 	margin-bottom: .7em;
 }
 
@@ -355,7 +344,7 @@ footer table td, footer table th {
 #footer-right {
 	text-align: right;
 	float: right;
-	padding-top: 6px;
+	padding-top: 10px;
 	width: 66px;
 }
 
@@ -404,6 +393,53 @@ img {
 
 img.has-attribution {
 	padding-bottom: 0px;
+}
+
+div.inline div.inline-left, div.inline div.inline-right {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 0px;
+}
+
+div.inline {
+	margin-bottom: 16px;
+	width: 100%;
+}
+
+#web-interface-img {
+	margin-bottom: 0px;
+	margin-left: 16px;
+	float: right;
+	max-width: 500px;
+}
+
+#web-interface-img img {
+	padding: 0px;
+}
+
+#web-interface-p {
+	width: calc(100% - 532px);
+	margin-top: 0px;
+}
+
+#web-interface-p:last-child * {
+	margin-top: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+	#web-interface-p {
+		display: block !important;
+	}
+
+	#web-interface-img {
+		max-width: 100%;
+		margin-bottom: 16px;
+		margin-left: 0px;
+	}
+	
+	#web-interface-p {
+		width: 100%;
+	}
 }
 
 

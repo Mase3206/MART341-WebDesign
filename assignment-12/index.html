@@ -28,7 +28,7 @@
 				<div class="items">
 					<p class="header-item"><a href="./README.md">README</a></p>
 	
-					<div class="header-item dropdown">
+					<div class="header-item dropdown"> <!-- Assignments -->
 						<p class="dropdown-title">Assignments</p>
 	
 						<div class="dropdown-content">
@@ -49,7 +49,7 @@
 						</div>
 					</div>
 	
-					<div class="header-item dropdown">
+					<div class="header-item dropdown"> <!-- Cluster Computing -->
 						<p class="dropdown-title">Cluster Computing</p>
 	
 						<div class="dropdown-content">
@@ -80,7 +80,7 @@
 				</div>
 
 				<!-- This triggers toggleSelection() from nav-menu-control to toggle the visibility of this section -->
-				<div class="header-item dropdown" onclick="toggleSection('assignments')">
+				<div class="header-item dropdown" onclick="toggleSection('assignments')"> <!-- Assignments -->
 					<p><a class="dropdown-title" href="#">Assignments</a></p>
 
 					<div class="dropdown-content" id="assignments">
@@ -101,7 +101,7 @@
 					</div>
 				</div>
 
-				<div class="header-item dropdown" onclick="toggleSection('cluster-computing')">
+				<div class="header-item dropdown" onclick="toggleSection('cluster-computing')"> <!-- Cluster Computing -->
 					<p><a class="dropdown-title" href="#">Cluster Computing</a></p>
 
 					<div class="dropdown-content" id="cluster-computing">
@@ -116,6 +116,8 @@
 
 		<div id="content">
 			<!-- Because Assignments 10 through 12 are all about the same topic, I decided to add this bit to reflect that and provide easy access to all the updates. -->
+			<h1>Cluster Update 2: New Plan!</h1>
+
 			<div class="series-disclaimer">
 				<p>
 					This page is part of my Cluster Computing Adventure series.
@@ -127,13 +129,38 @@
 				</ol>
 			</div>
 
-			<h2>What I've learned so far</h2>
+			<h2>Out with the old...</h2>
+			<p>In with the... different?</p>
 			<p>
-				I previously used a turn-key <span class="inline-dfn" title="Acronym: Network Attached Storage; a drive or folder that is accessed over the network">NAS</span> OS called <a href="https://www.openmediavault.org/" title="Link: OpenMediaVault homepage" rel="noopener noreferrer">OpenMediaVault</a>. OMV is an awesome OS based on <a href="https://www.debian.org/" title="Link: Debian homepage" rel="noopener noreferrer">Debian</a> with excellent hardware support.
+				I have decided that Proxmox is not what I want. So what now? I wanted to try an OS that is not specifically designed for clustering. I need an OS that can do it though. It needs to have great support for older and newer hardware, but it can't be a resource hog. It also needs to be stable. Fedora Server is a good fit. 
+			</p>
+
+			<p>
+				And, as I mentioned in the previous update, it has a killer web interface. I mean, look at it! It has all the things you would need to quickly and easily access. 
+			</p>
+
+			<div class="inline">
+				<div class="inline-right" id="web-interface-img">
+					<img src="/assets/images/fedora-server-web-interface.jpg" alt="Image of the awesome web-based management interface for Fedora 39 Server" max-width="500px" />
+				</div>
+
+				<div class="inline-left" id="web-interface-p">
+					<p>
+						I like Fedora Workstation and now use it as my primary Linux <span class="inline-dfn" title="Abbreviation: distribution; i.e. Ubuntu, Fedora, or Arch">distro</span> on my laptop (technically laptops). Why not try Fedora Server? In addition to simply being my preference, Fedora Linux is the <span class="inline-dfn" title="has a slightly newer kernel and packages; serves as a sort of testing ground for downstream versions">upstream version</span> of RedHat Linux, which is commonly used in enterprise environments. By familiarizing myself with Fedora Server (and Workstation, to a point), I am accruing useful skills for a potential career path.
+					</p>
+	
+					<p>
+						It also has a JavaScript ssh terminal for easy terminal access. This is extremely useful, as most server administration is done via the terminal. The alternative to this would be to connect to it via ssh through something like the Terminal on Unix-based systems or PuTTY on Windows.
+					</p>
+				</div>
+			</div>
+
+			<h2>What have I done since last week?</h2>
+			<p>
+				
 			</p>
 		</div>
 
-		<script src="/scripts/nav-menu-control.js"></script>
 
 		<footer id="footer">
 			<table>
@@ -149,4 +176,10 @@
 			</table>
 		</footer>
 	</body>
+
+	<!-- Load Scripts -->
+	<!-- Must be at the end of the document to work right -->
+	<script src="/assets/selfhost/jquery-3.7.1.min.js"></script>
+	<script src="/scripts/nav-menu-control.js"></script>
+	<script src="/scripts/inline-wrap-control.js"></script>
 </html>
