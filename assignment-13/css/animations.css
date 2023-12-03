@@ -1,0 +1,43 @@
+/* ooh pretty fades */
+
+@keyframes inline-dfn-hover {
+	from {
+		background-color: inherit;
+	}
+
+	to {
+		background-color: #dddddd;
+	}
+}
+
+@keyframes inline-dfn-nohover {
+	from {
+		background-color: #dddddd;
+	}
+
+	to {
+		background-color: inherit;
+	}
+}
+
+
+
+@keyframes menu-button-hover {
+	from {
+		background-color: inherit;
+	}
+
+	to {
+		background-color: #832629;
+	}
+}
+
+@keyframes menu-button-nohover {
+	from {
+		background-color: #832629;
+	}
+
+	to {
+		background-color: inherit;
+	}
+}

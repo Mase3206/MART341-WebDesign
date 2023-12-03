@@ -1,0 +1,229 @@
+/* Some animation stuff */
+
+@keyframes inline-dfn-hover {
+	from {
+		background-color: inherit;
+	}
+
+	to {
+		background-color: #dddddd;
+	}
+}
+
+@keyframes inline-dfn-nohover {
+	from {
+		background-color: #dddddd;
+	}
+
+	to {
+		background-color: inherit;
+	}
+}
+
+
+
+@keyframes menu-button-click {
+	from {
+		background-color: inherit;
+	}
+
+	to {
+		background-color: #832629;
+	}
+}
+
+@keyframes menu-button-noclick {
+	from {
+		background-color: #832629;
+	}
+
+	to {
+		background-color: inherit;
+	}
+}
+
+
+
+
+
+
+/* Declaring some variables to be used throughout the stylesheet */
+
+:root {
+	/* Declare the color pallete! */
+	--slate-blue: #3E434A;
+	--mid-green: #809174;
+	--beige: #DDC68C;
+	--sunflower-yellow: #E8D89D;
+	--velvet: #B14448;
+
+	/* Declare some other helpful variables */
+	--background-color: #ffffff;
+	--link-color: var(--slate-blue);
+	--clicked-link-color: var(--mid-green);
+	--text-color: #000000;
+	--font-size: 1em;
+}
+
+
+
+
+/* Root-level Styling */
+
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: var(--font-size);
+}
+
+body {
+	margin: 0px;
+}
+
+
+
+
+/* Header Styling */
+
+header {
+	--header-text-color: #ffffff;
+
+	z-index: 10;
+	background-color: var(--velvet);
+	color: var(--header-text-color);
+	padding: 8px;
+	height: 30px;
+}
+
+header * {
+	margin: 0px;
+	padding: 0px;
+}
+
+header .visible {
+	display: inline-block;
+}
+
+
+header a {
+	text-decoration: none;
+	color: var(--header-text-color);
+}
+
+header a:hover {
+	text-decoration: none;
+}
+
+header a:visited {
+	text-decoration: none;
+	color: var(--header-text-color);
+}
+
+
+#site-title {
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-top: 2.25px;
+	margin-left: 2.25px;
+	margin-bottom: auto;
+}
+
+
+#small-header {
+	float: right;
+	width: fit-content;
+}
+
+
+#menu-button {
+	position: relative;
+	width: 24px;
+	height: 24px;
+	padding: 2px;
+	border: var(--header-text-color) solid 1px;
+	border-radius: .2em;
+	animation-name: menu-button-noclick;
+	animation-duration: 50ms;
+	background-color: inherit;
+}
+
+
+#small-header-content {
+	z-index: 11;
+	display: none;
+	position: absolute;
+	top: 2.25em;
+	right: 0em;
+	background-color: var(--velvet);
+	padding: 4px;
+	padding-top: 2px;
+	border-bottom: 2px solid var(--slate-blue);
+	border-left: 2px solid var(--slate-blue);
+	margin-top: 10px;
+}
+
+#small-header-content p:first-child {
+	margin-top: 0px;
+}
+
+#small-header-content p {
+	margin: 8px;
+	padding: 6px;
+	width: fit-content;
+}
+
+#small-header-content p:hover {
+	background-color: var(--slate-blue);
+}
+
+#small-header-content p:hover a {
+	color: white;
+}
+
+
+
+
+#header-content-divider {
+	border: 1px solid var(--slate-blue);
+	margin: 0px;
+	margin-bottom: 8px;
+}
+
+
+
+
+/* Page Content Styling */
+
+#content {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	padding: 8px;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#contact-form {
+	max-width: 620px;
+	min-width: 100%;
+	height: 1200px;
+}
+
+
+
+
+
+/* Footer Styling */
+
+footer {
+	background-color: var(--slate-blue);
+	color: white;
+	font-size: calc(var(--font-size) * .75);
+	margin-top: 8px;
+	padding: 8px;
+}
+
+footer * {
+	margin: 0px;
+	padding: 0px;
+}
