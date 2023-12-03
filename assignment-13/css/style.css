@@ -197,7 +197,6 @@ header a:visited {
 #header-content-divider {
 	border: 1px solid var(--slate-blue);
 	margin: 0px;
-	margin-bottom: 8px;
 }
 
 
@@ -210,8 +209,7 @@ header a:visited {
 	color: var(--text-color);
 	padding: 8px;
 	max-width: 1000px;
-	margin-left: 24px;
-	margin-right: 24px;
+	margin: 16px 24px 16px 24px;
 	flex: 1;
 }
 
