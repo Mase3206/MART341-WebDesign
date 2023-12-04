@@ -54,6 +54,7 @@
 	--beige: #DDC68C;
 	--sunflower-yellow: #E8D89D;
 	--velvet: #B14448;
+	--dark-velvet: #832629;
 
 	/* Declare some other helpful variables */
 	--background-color: #ffffff;
@@ -191,6 +192,41 @@ header a:visited {
 	color: white;
 }
 
+
+/* Large header */
+
+#large-header {
+	display: none;
+	float: right;
+	margin: auto 8px auto 0px;
+}
+
+#large-header p {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 6px;
+}
+
+#large-header p:hover {
+	background-color: var(--dark-velvet);
+}
+
+
+/* Header switcher */
+
+@media only screen and (min-width: 800px) {
+	#small-header {
+		display: none;
+	}
+
+	#small-header-content {
+		display: none !important;
+	}
+
+	#large-header {
+		display: inline-block;
+	}
+}
 
 
 
