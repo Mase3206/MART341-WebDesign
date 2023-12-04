@@ -149,9 +149,9 @@ header a:visited {
 
 #menu-button {
 	position: relative;
-	width: 24px;
-	height: 24px;
-	padding: 2px;
+	width: 28px;
+	height: 28px;
+	padding: 0px;
 	border: var(--header-text-color) solid 1px;
 	border-radius: .2em;
 	animation-name: menu-button-noclick;
