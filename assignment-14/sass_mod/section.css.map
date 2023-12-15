@@ -1,1 +1,1 @@
-{"version":3,"sources":["section.sass","section.css","../bulma/sass/utilities/mixins.sass"],"names":[],"mappings":"AASA;EACE,oBANgB;ACFlB;ACoHE;EF7GF;IAII,kBARsB;ECCxB;EDSE;IACE,kBAVmB;ECGvB;EDQE;IACE,mBAXkB;ECKtB;AACF","file":"section.css"}
+{"version":3,"sources":["section.sass","section.css","../bulma/sass/utilities/mixins.sass"],"names":[],"mappings":"AASA;EACC,oBANiB;ACFlB;ACoHE;EF7GF;IAIE,kBARwB;ECCxB;EDSA;IACC,kBAVsB;ECGvB;EDQA;IACC,mBAXqB;ECKtB;AACF","file":"section.css"}

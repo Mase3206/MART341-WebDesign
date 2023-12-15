@@ -15,6 +15,7 @@
 			<div class="navbar-brand">
 				<a class="navbar-item" href="./">
 					<p class="title is-lenovo-font"><span class="t">T</span>rustyCentre</p>
+					<p class="subtitle is-lenovo-font">&emsp; &ndash; &emsp;OSes</p>
 				</a>
 			
 				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -34,19 +35,61 @@
 			</div>
 		</nav>
 
-		
+
 		<div style="max-width:1000px" id="main-content">
-			<section class="section">
-				<h1 class="title is-thinkpad-font">OS(es)</h1>
-	
+			<section class="section">	
 				<div class="block">
 					<p>
 						The TrustyCentre contains multiple devices within it: three Lenovo ThinkCentres, one dedicated computer as the NAS, one Raspberry Pi 3, one Raspberry Pi Pico, and one router. This menagerie of technology requires multiple flavors and kinds of OSes. 
 					</p>
 				</div>
-	
+			</section>
+
+			<section class="section">
+				<p class="title is-thinkpad-font">ThinkCentres</p>
+
 				<div class="block">
-					<p>uf mom</p>
+					<p>
+						The ThinkCentres all run <a href="https://rockylinux.org/" title="Link: Rocky Linux homepage" target="_blank">Rocky Linux</a> 9, the open source variant of <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux" title="Link: Red Hat Enterprise Linux webpage" target="_blank">Red Hat Enterprise Linux</a> (RHEL, for short). I previously planned on using Fedora Server, the upstream version of RHEL (and thus Rocky), but its release cycle is far too fast for this particular project.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<p class="title is-thinkpad-font">NAS</p>
+				
+				<div class="block">
+					<p>
+						Currently, the interim NAS is my gaming PC with a VM and a couple <a href="https://en.wikipedia.org/wiki/Samba_(software)" title="Wikipedia: Samba (software)" target="_blank">Samba</a> shares. This is not the long-term plan, but it will remain for the time being. The long term plan is to repurpose my previous gaming PC once I get a new one as a <a href="https://truenas.com" title="Link: TrueNAS homepage" target="_blank">TrueNAS</a> server. It will only be serving files and acting as the occasional PXE boot and network provisioning server.
+					</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<p class="title is-thinkpad-font">Raspberry Pis</p>
+
+				<div class="block">
+					<p>
+						The Raspberry Pi 3 runs a flavor of Debian Linux called <a href="https://www.raspberrypi.com/software/" title="Link: Raspberry Pi OS webpage" target="_blank">Raspberry Pi OS</a> (formerly called Raspbian, R.I.P.). This is a super lightweight operating system designed specifically for the Raspberry Pi family of ARM-based, single board computers.
+					</p>
+				</div>
+
+				<div class="block">
+					<p>
+						The Raspberry Pi Pico doesn't technically run an operating system, as it is a microcontroller, not a computer. Micorcontrollers are great at doing simple, repetitive tasks very reliably. In my case, the Pico is a simple PWM fan controller with automatic speed adjustments using temperature measurements from various thermal probes. Three probes are placed just next to each ThinkCentre power supply, with a fourth placed in the PDU shelf just below the power supplies.
+					</p>
+				</div>
+
+				<div class="block">
+					<p>
+						The two Raspberry Pis  operate together. The Pi 3 hosts a simple web interface to view and change fan speeds while the Pico does the actual controlling of fans. To make this work, the two are in constant communication via a discrete protocol over UART. I wanted to use SPI, but Raspberry Pis can only operate in Host mode, and I would need the Pico to operate in Client mode.
+					</p>
+				</div>
+
+				<div class="block">
+					<p>
+						The router is a GL.inet travel router running OpenWRT-based firmware. This is pretty close to what I need and want in a super compact package. The router facilitates the connection between the ThinkCentres and Raspberry Pis and the larger network &mdash; though, when I have an apartment and am managing my own Internet, it will probably just be <em>the router</em>, not just the gateway after the router. I cover this in more detail on the <a href="./networking.html" title="Page: Newtorking">networking</a> page.
+					</p>
 				</div>
 			</section>
 		</div>
@@ -55,7 +98,7 @@
 		<footer class="footer">
 			<div class="content has-text-centered">
 				<p>
-					<strong class="is-lenovo-font"><span class="t">T</span>rustyCentre</strong> by <a href="https://noahsroberts.com" target="_blank">Noah S. Roberts</a>, &copy; 2023. Source code is licenced under <a href="https://opensource.org/license/gpl-3-0/" target="_blank">GPLv3</a>, unless otherwise noted. Website is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank">CC BY-NC-SA 4.0</a>.
+					<strong class="is-lenovo-font"><span class="t">T</span>rustyCentre</strong> by <a href="https://noahsroberts.com" target="_blank">Noah S. Roberts</a>, &copy; 2023. All linked source code is licenced under <a href="https://opensource.org/license/gpl-3-0/" target="_blank">GPLv3</a>, unless otherwise noted. Website is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank">CC BY-NC-SA 4.0</a>.
 				</p>
 			</div>
 		</footer>
