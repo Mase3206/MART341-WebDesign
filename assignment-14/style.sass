@@ -3,14 +3,15 @@
 $lenovo-font: 'Montserrat Alternates', sans-serif
 
 $black: rgb(22, 22, 22)
-$black-ter: rgb(50, 50, 50)
-$black-bis: rgb(80, 80, 80)
+$black-ter: rgb(33, 33, 33)
+$black-bis: rgb(44, 44, 44)
 $red: rgb(224, 31, 34)
 $blue: rgb(74, 159, 222)
 $yellow: rgb(219, 202, 116)
 $white: rgb( 217, 217, 217)
 $dark-grey: rgb(80, 80, 80)
 
+// interpreted colors
 $primary: $red
 $link: $red
 $warning: $yellow
@@ -20,13 +21,15 @@ $text: $white
 $grey-darker: $dark-grey
 $dark: $grey-darker
 
+// color schemes
 $background: $black
 $scheme-main: $black
 $scheme-main-ter: $black-ter
-$scheme-main-bis: $black-ter
+$scheme-main-bis: $black-bis
 $body-background-color: $black
 $text-strong: $red
 
+// title things
 $title-family: $lenovo-font
 $title-weight: 700
 
@@ -37,4 +40,7 @@ $control-border-width: 2px
 $input-border-color: transparent
 $input-shadow: none
 
+// section styling
+
+@import sass_mod/section.sass
 @import bulma/bulma.sass

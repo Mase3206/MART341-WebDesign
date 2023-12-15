@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100;1,400&family=Montserrat:wght@700&display=swap');
 
 
 @font-face {
@@ -15,7 +15,11 @@
 
 
 .is-lenovo-font {
-	font-family: var(--lenovo-font);
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.is-lenovo-font span.t {
+	font-family: 'Montserrat', sans-serif;
 }
 
 .is-thinkpad-font {
@@ -25,3 +29,9 @@
 	font-weight: 400;
 	color: var(--white);
 }
+
+#main-content {
+	margin-left: auto;
+	margin-right: auto;
+}
+

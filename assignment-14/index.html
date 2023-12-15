@@ -4,9 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-		<title>trustyCentre</title>
+		<title>TrustyCentre</title>
 	
+		<!-- This is the Bulma-related stylesheet. -->
 		<link rel="stylesheet" href="style.css">
+		<!-- This is my stylesheet with a few customizations written in raw CSS for things that are just simpler to write a quick CSS class for rather than dig through the endless SASS files Bulma uses. -->
 		<link rel="stylesheet" href="raw_cust.css">
 	</head>
 
@@ -14,7 +16,7 @@
 		<nav class="navbar" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="./">
-					<p class="title is-lenovo-font">trustyCentre</p>
+					<p class="title is-lenovo-font"><span class="t">T</span>rustyCentre</p>
 				</a>
 			
 				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -29,24 +31,78 @@
 					<a class="navbar-item" href="./software.html">Software</a>
 					<a class="navbar-item" href="./hardware.html">Hardware</a>
 					<a class="navbar-item" href="./networking.html">Networking</a>
-					<a class="navbar-item" href="./provisioning.html">Provisioning</a>
+					<a class="navbar-item" href="./os.html">OS</a>
 				</div>
 			</div>
 		</nav>
 
-		<section class="section">
-			<div class="block">
-				<p>
-					I have been working on a bunch of side projects throughout the school year. Some of them are related to each other, others are not. 
-				</p>
+		<div style="max-width:1000px" id="main-content">
+			<section class="section is-medium">
+				<h1 class="title is-thinkpad-font">Welcome!</h1>
+				<div class="block">
+					<p>
+						Welcome to the TrustyCentre project page! Here you can find information about what the TrustyCentre is, what <a href="./software.html">software</a> it encapsualtes, what <a href="./os.html">OSes</a> and <a href="./hardware.html">hardware</a> it runs on, and how everything is bound together by the power of <a href="./networking.html">networking</a>.
+					</p>
+				</div>
+			</section>
+			
+			<section class="section">
+				<h1 class="title is-thinkpad-font">What is the TrustyCentre?</h1>
+				
+				<div class="block">
+					<p>
+						The TrustyCentre is a collection of related projects running on my "Trusty" cluster. Trusty is a small cluster of three Lenovo ThinkCentre M900 microcomputers running Rocky Linux as its OS and Docker as its containerization and clustering hypervisor. I named the cluster this simply because it sounds nice. "TrustyCentre" is thus a stylized portmanteau of "Trusty cluster" and "ThinkCentre", hence the European spelling. 
+					</p>
+				</div>
+			</section>
+			
+			<section class="section">
+				<h1 class="title is-thinkpad-font">About this website</h1>
+	
+				<div class="block">
+					<p>
+						I have been working on a bunch of side projects throughout the school year. Some of them are related to each other, others are not. 
+					</p>
+		
+				</div>
+	
+				<div class="block">
+					<p>
+						That statement is false. More specifically, it is <em>now</em> false. As I continued planning, pondering, and progressing on my cluster project (which I talked about in detail starting with <a href="/assignment-11/">this page</a>), most of my projects now relate to the cluster project in one way or another. This website is all about this TrustyCentre megaproject.
+					</p>
+				</div>
+			</section>
+	
+			<section class="section">
+				<h1 class="title is-thinkpad-font">Nerdiness</h1>
+	
+				<div class="block">
+					<p>
+						This is an incredibly nerdy project. I am repurposing old computers to do things that the vast majority of people either don't care about, didn't know was possible, or both. I am teaching myself how to do some things I wouldn't have dreamt of just a few years ago. The end goal, to use it as part of my HomeLab, is one that many of my coworkers fully understand the appeal &mdash; and I work in IT.
+					</p>
+				</div>
+	
+				<div class="block">
+					<p>
+						On top of that, have these fonts seemed at all recognizable to you? Unless you are a fellow tech nerd, probably not, as they are the fonts used in the <strong class="is-lenovo-font">Lenovo</strong> and <span class="is-thinkpad-font">ThinkPad</span> logos. The ThinkPad font, Haettenschweiler, is not quite perfect though, as the version used in the ThinkPad and ThinkCentre logos has a red, circular dot above the "I" instead of a square.\
+					</p>
+				</div>
+	
+				<div class="block">
+					<p>
+						I'm totally not a Lenovo fanboy.
+					</p>
+				</div>
+			</section>
+		</div>
 
-			</div>
-			<div class="block">
+		<footer class="footer">
+			<div class="content has-text-centered">
 				<p>
-					That statement is false. More specifically, it is <em>now</em> false. As I continued planning, pondering, and progressing on my cluster project (which I talked about in detail starting with <a href="/assignment-11/">this page</a>), most of my projects have slowly began 
+					<strong class="is-lenovo-font"><span class="t">T</span>rustyCentre</strong> by <a href="https://noahsroberts.com" target="_blank">Noah S. Roberts</a>, &copy; 2023. Source code is licenced under <a href="https://opensource.org/license/gpl-3-0/" target="_blank">GPLv3</a>, unless otherwise noted. Website is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank">CC BY-NC-SA 4.0</a>.
 				</p>
 			</div>
-		</section>
+		</footer>
 	</body>
 
 	<script src="./jquery-3.7.1.min.js"></script>
