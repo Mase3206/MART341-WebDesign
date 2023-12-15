@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100;1,400&display=swap');
+
+
+@font-face {
+	font-family: 'Haettenschweiler';
+	src: url('assets/fonts/Haettenschweiler-Regular.ttf');
+}
+
+
+:root {
+	--lenovo-font: 'Montserrat Alternates', sans-serif;
+	--thinkpad-font: 'Haettenschweiler';
+	--white: rgb( 217, 217, 217);
+}
+
+
+.is-lenovo-font {
+	font-family: var(--lenovo-font);
+}
+
+.is-thinkpad-font {
+	font-family: var(--thinkpad-font);
+	/* font-family: sans-serif; */
+	font-stretch: condensed;
+	font-weight: 400;
+	color: var(--white);
+}
