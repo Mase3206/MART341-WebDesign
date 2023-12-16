@@ -35,3 +35,6 @@
 	margin-right: auto;
 }
 
+.navbar-brand .subtitle {
+	padding-left: 1rem;
+}
