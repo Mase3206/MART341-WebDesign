@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100;1,400&family=Montserrat:wght@100;400;700&display=swap");
 @font-face {
   font-family: "Haettenschweiler";
-  src: url("../../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
 }
 .section {
   padding: 3rem 1.5rem;
@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: "Haettenschweiler";
-  src: url("../../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
 }
 canvas.test-layout {
   border: 1px solid #ffffff;
@@ -53,7 +53,7 @@ canvas#network-diagram {
 
 @font-face {
   font-family: "Haettenschweiler";
-  src: url("../../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Haettenschweiler-Regular.ttf") format("truetype");
 }
 .is-lenovo-font {
   font-family: "Montserrat Alternates";
