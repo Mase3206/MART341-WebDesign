@@ -1,0 +1,7 @@
+{
+	"liveSassCompile.settings.showOutputWindowOn": "Error",
+	"liveSassCompile.settings.excludeList": [
+		"/.vscode/**",
+		"/style/sass/**"
+	]
+}

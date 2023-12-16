@@ -1,4 +1,7 @@
 @import "../../bulma/sass/utilities/mixins"
+@import "variables"
+
+$default-padding: 24px
 
 canvas.test-layout
 	border: 1px solid #ffffff
@@ -6,6 +9,15 @@ canvas.test-layout
 
 
 canvas#network-diagram
-	min-width: 400px
-	max-width: 720px
+	color: $white
+	background: $background
+	@include mobile
+		width: 400px
+	@include tablet
+		width: 720px
+		// height: 300px
+	@include desktop
+		width: 1000px - ($default-padding * 2)
 	height: 300
+	overflow: scroll
+	

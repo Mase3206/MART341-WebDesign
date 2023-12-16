@@ -1,40 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,400;0,700;1,100;1,400&family=Montserrat:wght@100;400;700&display=swap')
-
-
-@font-face 
-	font-family: 'Haettenschweiler'
-	src: url('assets/fonts/Haettenschweiler-Regular.ttf')
-
-
-
-:root 
-	--lenovo-font: 'Montserrat Alternates', sans-serif
-	--thinkpad-font: 'Haettenschweiler'
-	--white: rgb( 217, 217, 217)
-
+@import "variables"
 
 
 .is-lenovo-font 
-	font-family: 'Montserrat Alternates', sans-serif
+	font-family: $lenovo-font
 
 
 .is-lenovo-font span.t 
-	font-family: 'Montserrat', sans-serif
+	font-family: $lenovo-font-straight
 
 
-.is-thinkpad-font 
-	font-family: var(--thinkpad-font)
-	/* font-family: sans-serif; */
-	font-stretch: condensed
-	font-weight: 400
-	color: var(--white)
+.is-thinkpad-font
+	font-family: $thinkpad-font !important
+	font-stretch: condensed !important
+	font-weight: 400 !important
+	color: $white !important
 
 
 #main-content 
 	margin-left: auto
 	margin-right: auto
 
+.navbar-brand 
+	.title
+		margin-top: 0rem
+		margin-bottom: 0rem !important
+	.subtitle 
+		margin-top: 0.5rem !important
+		margin-bottom: 0rem
+		padding-left: 1rem
 
-.navbar-brand .subtitle 
-	padding-left: 1rem
+
+.navbar-item
+	line-height: 1
 
